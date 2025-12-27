@@ -3941,6 +3941,135 @@ const tournamentWinners = {
     "Open 28": ["Frozt", "Fuhua", "Bunsen"]
 };
 
+const tournamentBans = {
+    "Open 7": [
+        "Seiun Sky (Original)", 
+        "Oguri Cap (Original)", 
+        "Maruzensky (Summer)", 
+        "Taiki Shuttle (Original)"
+    ],
+	"Open 8": [
+		"Narita Taishin (Original)",
+		"Mayano Top Gun (Original)",
+		"Grass Wonder (Fantasy)"
+	],
+	"Open 9": [
+		"Oguri Cap (Original)",
+		"Sakura Bakushin O (Original)",
+		"Taiki Shuttle (Original)"
+	],
+	"Open 10": [
+		"Maruzensky (Summer)",
+		"Narita Taishin (Original)",
+		"Oguri Cap (Original)",
+		"Gold Ship (Original)"
+	],
+	"Open 11": [
+		"Maruzensky (Summer)",
+		"Gold Ship (Original)",
+		"Seiun Sky (Original)"
+	],
+	"Open 12": [
+		"Mayano Top Gun (Original)",
+		"Narita Taishin (Original)",
+		"Grass Wonder (Fantasy)"
+	],
+	"Open 13": [
+		"Maruzensky (Summer)",
+		"Smart Falcon (Original)",
+		"El Condor Pasa(Original)",
+		"Silence Suzuka (Original)"
+	],
+	"Open 14": [
+		"Maruzensky (Summer)",
+		"Narita Taishin (Original)",
+		"Gold Ship (Original)"
+	],
+	"Open 15": [
+		"El Condor Pasa (Fantasy)",
+		"Maruzensky (Original)",
+		"Oguri Cap (Original)",
+		"Smart Falcon (Original)",
+		"Agnes Digital (Original)"
+	],
+	"Open 16": [
+		"Mejiro McQueen (Anime)",
+		"Meisho Doto (Original)",
+		"Gold Ship (Original)",
+		"Narita Taishin (Original)",
+		"Seiun Sky (Original)",
+		"Mayano Top Gun (Original)",
+		"Maruzensky (Summer)"
+	],
+	"Open 17": [
+		"Narita Taishin (Original)",
+		"Super Creek (Original)",
+		"Maruzensky (Summer)"
+	],
+	"Open 19": [
+		"Gold Ship (Original)",
+		"Smart Falcon (Original)",
+		"Seiun Sky (Original)"
+	],
+	"Open 20": [
+		"Silence Suzuka (Original)",
+		"Seiun Sky (Original)",
+		"Taiki Shuttle (Original)"
+	],
+	"Open 21": [
+		"Maruzensky (Summer)",
+		"Seiun Sky (Original)",
+		"Special Week (Original)"
+	]
+	"Open 22": [
+		"Gold Ship (Original)",
+		"Narita Taishin (Original)",
+		"Seiun Sky (Original)"
+	],
+	"Open 23": [
+		"Mayano Top Gun (Wedding)",
+		"Gold Ship (Original)",
+		"Narita Taishin (Original)",
+		"Manhattan Cafe (Original)"
+	],
+	"Open 24": [
+		"Seiun Sky (Original)",
+		"Gold Ship (Original)",
+		"Maruzensky (Summer)",
+		"Daiwa Scarlet (Original)",
+		"Narita Taishin (Original)"
+	],
+	"Open 25": [
+		"Meisho Doto (Original)",
+		"Maruzensky (Original)",
+		"Oguri Cap (Original)",
+		"Maruzensky (Summer)",
+		"Silence Suzuka (Original)",
+		"Mejiro Ryan (Original)",
+		"Seiun Sky (Original)"
+	],
+	"Open 26": [
+		"Taiki Shuttle (Original)",
+		"Vodka (Original)",
+		"Silence Suzuka (Original)",
+		"Daiwa Scarlet (Original)",
+		"Maruzensky (Summer)",
+		"Oguri Cap (Original)",
+		"Seiun Sky (Original)"
+	],
+	"Open 27": [
+		"Maruzensky (Summer)",
+		"Mayano Top Gun (Original)",
+		"Seiun Sky (Original)",
+		"Silence Suzuka (Original)
+	],
+	"Open 28": [
+		"Vodka (Original)",
+		"Silence Suzuka (Original)",
+		"Oguri Cap (Original)
+	]
+};
 if (typeof module !== 'undefined') {
   module.exports = compactData;
 }
+
