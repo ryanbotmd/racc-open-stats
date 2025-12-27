@@ -1315,7 +1315,7 @@ const compactData = [
     4,
     "3600m Turf (L)",
     "Open 12",
-    "Agnes Tachyon",
+    "Special Week",
     "Summer",
     10
   ],
@@ -3928,7 +3928,7 @@ const tournamentWinners = {
 	"Open 25": ["Jedmumu", "Pines", "Alfheix"],
 	"Open 26": ["Synocra", "Dedratermi", "Eva"],
 	"Open 27": ["Jedmumu", "Alfheix", "Divine"],
-    "Open 28": ["Frozt", "Fuhua", "Bunsen"]
+    "Open 28": ["Frozt", "FuHua", "Bunsen"]
 };
 const tournamentBans = {
     "Open 7": [
@@ -4111,6 +4111,7 @@ const tournamentRaceResults = {
         ]
     }
 };
+
 
 
 
