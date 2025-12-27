@@ -319,3 +319,80 @@ window.onload = function() {
 
     updateData();
 };
+
+
+
+function calculateIndividualStats() {
+    let stats = {};
+
+    // 1. Loop through every Tournament
+    for (const [tournamentName, stages] of Object.entries(tournamentRaceResults)) {
+        
+        // 2. Loop through every Stage (Group A, Group B, Finals)
+        for (const [stageName, races] of Object.entries(stages)) {
+            
+            // 3. Loop through every Race
+            races.forEach((raceResult) => {
+                
+                // 4. Loop through players in that race
+                raceResult.forEach((player, rankIndex) => {
+                    // Initialize player if not exists
+                    if (!stats[player]) {
+                        stats[player] = { 
+                            name: player, 
+                            totalPoints: 0, 
+                            racesRun: 0 
+                        };
+                    }
+
+                    // Assign Points (If rank is within 1-10)
+                    if (rankIndex < POINTS_SYSTEM.length) {
+                        stats[player].totalPoints += POINTS_SYSTEM[rankIndex];
+                    }
+
+                    // Increment race count for Average calc
+                    stats[player].racesRun += 1;
+                });
+            });
+        }
+    }
+
+    // 5. Convert to Array and Calculate Average
+    const leaderboard = Object.values(stats).map(player => {
+        return {
+            name: player.name,
+            totalPoints: player.totalPoints,
+            racesRun: player.racesRun,
+            // Calculate Avg and round to 2 decimals
+            avgPoints: (player.totalPoints / player.racesRun).toFixed(2)
+        };
+    });
+
+    // 6. Sort by Total Points (Highest to Lowest)
+    return leaderboard.sort((a, b) => b.totalPoints - a.totalPoints);
+}
+
+function renderStatsTable() {
+    const data = calculateIndividualStats();
+    const tbody = document.getElementById('points-table-body');
+    if (!tbody) return;
+
+    tbody.innerHTML = '';
+
+    data.forEach((player, index) => {
+        const row = `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${player.name}</td>
+                <td>${player.racesRun}</td> <td>${player.totalPoints}</td>
+                <td>${player.avgPoints}</td>
+            </tr>
+        `;
+        tbody.innerHTML += row;
+    });
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+    renderStatsTable();
+});

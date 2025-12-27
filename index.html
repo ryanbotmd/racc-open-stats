@@ -56,6 +56,7 @@
         <div class="tab active" onclick="switchTab('tier-lists')">Tier Lists</div>
         <div class="tab" onclick="switchTab('uma-stats')">Uma Stats</div>
         <div class="tab" onclick="switchTab('trainer-stats')">Trainer Stats</div>
+        <div class="tab" onclick="switchTab('championship')">Championship</div>
     </div>
 
     <div id="tier-lists" class="view-section active">
@@ -112,6 +113,27 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <div id="championship" class="view-section">
+    <div class="card">
+        <h2>🏆 Championship Standings</h2>
+        <div style="overflow-x:auto;">
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Trainer</th>
+                        <th>Races</th>
+                        <th>Total Points</th>
+                        <th>Avg Pts</th>
+                    </tr>
+                </thead>
+                <tbody id="points-table-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
     </div>
 
 </div> <script src="data.js"></script>

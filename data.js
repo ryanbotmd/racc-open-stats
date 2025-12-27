@@ -4073,4 +4073,52 @@ if (typeof module !== 'undefined') {
   module.exports = { compactData, tournamentWinners, tournamentBans };
 }
 
+const POINTS_SYSTEM = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1];
+
+// DATA STRUCTURE:
+// Store results by Tournament -> Stage -> Race Number
+// List players in order of finish: 1st, 2nd, 3rd...
+const tournamentRaceResults = {
+    "Racc Open 1": {
+        "Group A": [
+            // Race 1 (Top teams from A and B + Wildcard)
+            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
+			// Race 2
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 3
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            // Race 4
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 5
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
+            // ... Add all 5 races for Finals
+        ],
+        "Group B": [
+            // Race 1 (Top teams from A and B + Wildcard)
+            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
+			// Race 2
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 3
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            // Race 4
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 5
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
+            // ... Add all 5 races for Finals
+        ],
+        "Finals": [
+            // Race 1 (Top teams from A and B + Wildcard)
+            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
+			// Race 2
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 3
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            // Race 4
+            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 5
+            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
+            // ... Add all 5 races for Finals
+        ]
+    }
+};
 
