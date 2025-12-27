@@ -53,30 +53,31 @@ function calculateStats(filteredData) {
     const umaMap = {};
     const trainerMap = {};
 
+    // 1. Process Race Data (Picks & Wins)
     filteredData.forEach(row => {
-        // --- 1. UMA STATS ---
+        // --- Uma Stats ---
         if (!umaMap[row.UniqueName]) { 
             umaMap[row.UniqueName] = { 
                 name: row.UniqueName, 
                 picks: 0, 
                 wins: 0, 
-                totalShare: 0,
-                tourneyWins: 0
+                totalShare: 0, 
+                tourneyWins: 0,
+                bans: 0 // Initialize bans
             }; 
         }
         umaMap[row.UniqueName].picks++;
         umaMap[row.UniqueName].wins += row.Wins;
         umaMap[row.UniqueName].totalShare += row.WinShare;
 
-        // CHECK: Did this Uma's trainer win this specific tournament?
-        // We look up the tournament ID (row.RawLength) in the global tournamentWinners object
+        // Check if this Uma was on a winning team
         if (typeof tournamentWinners !== 'undefined' && tournamentWinners[row.RawLength]) {
             if (tournamentWinners[row.RawLength].includes(row.Trainer)) {
                 umaMap[row.UniqueName].tourneyWins++;
             }
         }
 
-        // --- 2. TRAINER STATS ---
+        // --- Trainer Stats ---
         if (!trainerMap[row.Trainer]) {
             trainerMap[row.Trainer] = {
                 name: row.Trainer,
@@ -102,7 +103,7 @@ function calculateStats(filteredData) {
         t.characterHistory[row.UniqueName].wins += row.Wins;
     });
 
-    // Post-Process Trainer Wins (Logic remains the same as before)
+    // 2. Process Trainer Tourney Wins
     Object.values(trainerMap).forEach(t => {
         t.playedTourneys.forEach(tourneyID => {
             if (typeof tournamentWinners !== 'undefined' && tournamentWinners[tourneyID]) {
@@ -113,7 +114,27 @@ function calculateStats(filteredData) {
         });
     });
 
-    // --- FORMATTING ---
+    // 3. Process Bans
+    // We count how many tournaments actually have ban data to calculate a fair percentage
+    const totalBanTourneys = (typeof tournamentBans !== 'undefined') ? Object.keys(tournamentBans).length : 0;
+
+    if (typeof tournamentBans !== 'undefined') {
+        Object.values(tournamentBans).forEach(banList => {
+            banList.forEach(umaName => {
+                // If banned Uma was never picked, create a new entry for them so they show up
+                if (!umaMap[umaName]) {
+                    umaMap[umaName] = { 
+                        name: umaName, 
+                        picks: 0, wins: 0, totalShare: 0, tourneyWins: 0, 
+                        bans: 0 
+                    };
+                }
+                umaMap[umaName].bans++;
+            });
+        });
+    }
+
+    // 4. Formatting for Display
     const formatStats = (obj, type) => Object.values(obj).map(item => {
         const stats = {
             ...item,
@@ -124,16 +145,24 @@ function calculateStats(filteredData) {
         };
 
         if (type === 'uma') {
+            // Tourney Win Rate
             const tWinRate = item.picks > 0 ? (item.tourneyWins / item.picks * 100).toFixed(1) : "0.0";
             stats.tourneyStatsDisplay = `${tWinRate}% <span style="font-size:0.8em; color:#888">(${item.tourneyWins}/${item.picks})</span>`;
+
+            // Ban Rate
+            const banRate = totalBanTourneys > 0 ? (item.bans / totalBanTourneys * 100).toFixed(1) : "0.0";
+            stats.banStatsDisplay = `${banRate}% <span style="font-size:0.8em; color:#888">(${item.bans}/${totalBanTourneys})</span>`;
         }
 
         if (type === 'trainer') {
+            // Trainer Tourney Win Rate
             const tourneyCount = item.playedTourneys.size;
             const tWinRate = tourneyCount > 0 ? (item.tournamentWins / tourneyCount * 100).toFixed(1) : "0.0";
             stats.tourneyStatsDisplay = `${tWinRate}% <span style="font-size:0.8em; color:#888">(${item.tournamentWins}/${tourneyCount})</span>`;
 
+            // Favorites & Aces
             const historyArr = Object.entries(item.characterHistory).map(([key, val]) => ({ name: key, ...val }));
+            
             historyArr.sort((a, b) => b.picks - a.picks);
             const fav = historyArr[0];
             stats.favorite = fav ? `${formatName(fav.name)} <span class="stat-badge">x${fav.picks}</span>` : '-';
@@ -219,9 +248,10 @@ function updateData() {
 
     const stats = calculateStats(filtered);
 
+    // Render Uma Table (Updated to include Ban Stats)
     stats.umaStats.sort((a, b) => b.dom - a.dom);
     renderTable('umaTable', stats.umaStats, 
-        ['name', 'picks', 'wins', 'dom', 'tourneyStatsDisplay']
+        ['name', 'picks', 'wins', 'dom', 'tourneyStatsDisplay', 'banStatsDisplay']
     );
 
     // Render Trainer Table
@@ -278,5 +308,4 @@ window.onload = function() {
     }
 
     updateData();
-
 };
