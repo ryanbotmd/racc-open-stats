@@ -4065,53 +4065,330 @@ if (typeof module !== 'undefined') {
 
 const POINTS_SYSTEM = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1];
 
-// DATA STRUCTURE:
-// Store results by Tournament -> Stage -> Race Number
-// List players in order of finish: 1st, 2nd, 3rd...
 const tournamentRaceResults = {
-    "Racc Open 1": {
-        "Group A": [
-            // Race 1 (Top teams from A and B + Wildcard)
-            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
-			// Race 2
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+    // Open 1-3 (Data not provided yet)
+    "Open 1": { "Finals": [] },
+    "Open 2": { "Finals": [] },
+    "Open 3": { "Finals": [] },
+
+    // Open 4
+    "Open 4": {
+        "Finals": [
+            // Race 1
+            ["Raccoon", "Sumpfranze", "Divine", "Synocra", "MetaHayato", "Leficious", "Spyder", "Sayo", "Eva", "Buster", "Honsler", "Kenesu"],
+            // Race 2
+            ["Raccoon", "Sumpfranze", "Leficious", "Divine", "Buster", "Spyder", "Honsler", "Sayo", "MetaHayato", "Eva", "Synocra", "Kenesu"],
             // Race 3
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            ["Honsler", "Sumpfranze", "MetaHayato", "Raccoon", "Sayo", "Divine", "Buster", "Synocra", "Leficious", "Eva", "Spyder", "Kenesu"],
             // Race 4
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            ["Raccoon", "Buster", "MetaHayato", "Sumpfranze", "Eva", "Synocra", "Honsler", "Sayo", "Leficious", "Spyder", "Divine", "Kenesu"],
             // Race 5
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
-            // ... Add all 5 races for Finals
+            ["Leficious", "Honsler", "Sayo", "Synocra", "Sumpfranze", "Buster", "Raccoon", "MetaHayato", "Spyder", "Divine", "Eva", "Kenesu"]
+        ]
+    },
+
+    // Open 5-19 (Data not provided yet)
+    "Open 5": { "Finals": [] },
+    "Open 6": { "Finals": [] },
+    "Open 7": { "Finals": [] },
+    "Open 8": { "Finals": [] },
+    "Open 9": { "Finals": [] },
+    "Open 10": { "Finals": [] },
+    "Open 11": { "Finals": [] },
+    "Open 12": { "Finals": [] },
+    "Open 13": { "Finals": [] },
+    "Open 14": { "Finals": [] },
+    "Open 15": { "Finals": [] },
+    "Open 16": { "Finals": [] },
+    "Open 17": { "Finals": [] },
+    "Open 18": { "Finals": [] },
+    "Open 19": { "Finals": [] },
+
+    // Open 20
+    "Open 20": {
+        "Finals": [
+            // Race 1
+            ["Cefiro", "Spyder", "Lain", "FuHua", "Roidee", "Raccoon", "Pines", "Sumpfranze", "Dedratermi", "Minty", "Jedmumu", "Synocra"],
+            // Race 2
+            ["Raccoon", "Roidee", "Dedratermi", "Spyder", "Sumpfranze", "FuHua", "Lain", "Cefiro", "Pines", "Minty", "Jedmumu", "Synocra"],
+            // Race 3
+            ["Dedratermi", "Sumpfranze", "Roidee", "Raccoon", "Cefiro", "FuHua", "Spyder", "Pines", "Lain", "Minty", "Jedmumu", "Synocra"],
+            // Race 4
+            ["Raccoon", "Roidee", "Dedratermi", "Lain", "Cefiro", "FuHua", "Pines", "Sumpfranze", "Spyder", "Minty", "Jedmumu", "Synocra"],
+            // Race 5
+            ["Spyder", "Roidee", "Cefiro", "Sumpfranze", "Raccoon", "FuHua", "Lain", "Dedratermi", "Pines", "Minty", "Jedmumu", "Synocra"]
+        ]
+    },
+
+    // Open 21
+    "Open 21": {
+        "Finals": [
+            // Race 1
+            ["Synocra", "HoriYon", "Pines", "Lain", "Raccoon", "Boop", "Frozt", "Dedratermi", "Jedmumu", "FuHua", "Eva", "Roidee", "Mysteri", "Kenesu", "Spyder"],
+            // Race 2
+            ["Lain", "FuHua", "Synocra", "HoriYon", "Kenesu", "Frozt", "Pines", "Boop", "Eva", "Raccoon", "Mysteri", "Jedmumu", "Dedratermi", "Roidee", "Spyder"],
+            // Race 3
+            ["HoriYon", "Synocra", "Lain", "Roidee", "FuHua", "Boop", "Jedmumu", "Pines", "Dedratermi", "Mysteri", "Frozt", "Raccoon", "Eva", "Kenesu", "Spyder"],
+            // Race 4
+            ["HoriYon", "Jedmumu", "FuHua", "Lain", "Boop", "Raccoon", "Dedratermi", "Eva", "Kenesu", "Pines", "Frozt", "Synocra", "Mysteri", "Roidee", "Spyder"],
+            // Race 5
+            ["Frozt", "Lain", "Boop", "Roidee", "HoriYon", "Raccoon", "Jedmumu", "Synocra", "Pines", "Dedratermi", "Mysteri", "Eva", "FuHua", "Kenesu", "Spyder"]
+        ]
+    },
+
+    // Open 22
+    "Open 22": {
+        "Finals": [
+            // Race 1
+            ["Alfheix", "FuHua", "Raccoon", "Boop", "Sumpfranze", "Dedratermi", "MrTurtlez", "HoriYon", "Kenesu", "Synocra", "Spyder", "Eva"],
+            // Race 2
+            ["Sumpfranze", "Dedratermi", "Raccoon", "Eva", "Boop", "HoriYon", "Synocra", "Kenesu", "FuHua", "Spyder", "Alfheix", "MrTurtlez"],
+            // Race 3
+            ["Boop", "Raccoon", "FuHua", "Sumpfranze", "HoriYon", "Kenesu", "Dedratermi", "Alfheix", "MrTurtlez", "Synocra", "Spyder", "Eva"],
+            // Race 4
+            ["Raccoon", "Boop", "Kenesu", "Sumpfranze", "FuHua", "Dedratermi", "Spyder", "Eva", "MrTurtlez", "Alfheix", "HoriYon", "Synocra"],
+            // Race 5
+            ["Alfheix", "Boop", "Kenesu", "Sumpfranze", "FuHua", "Dedratermi", "Spyder", "Eva", "Synocra", "Raccoon", "MrTurtlez", "HoriYon"]
+        ]
+    },
+
+    // Open 23
+    "Open 23": {
+        "Group A": [
+            // Race 1
+            ["Roidee", "Bresto", "Eva", "Kenesu", "Boop", "Sumpfranze", "KN", "Pines", "MrTurtlez"],
+            // Race 2
+            ["Roidee", "Boop", "Sumpfranze", "Eva", "KN", "Pines", "Kenesu", "Bresto", "MrTurtlez"],
+            // Race 3
+            ["Eva", "Roidee", "Boop", "Sumpfranze", "KN", "MrTurtlez", "Kenesu", "Bresto", "Pines"],
+            // Race 4
+            ["Roidee", "Pines", "Sumpfranze", "Eva", "Kenesu", "Boop", "KN", "Bresto", "MrTurtlez"],
+            // Race 5
+            ["Sumpfranze", "Roidee", "Boop", "KN", "Eva", "Pines", "MrTurtlez", "Bresto", "Kenesu"]
         ],
         "Group B": [
-            // Race 1 (Top teams from A and B + Wildcard)
-            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
-			// Race 2
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 1
+            ["Synocra", "Dedratermi", "Jedmumu", "Frozt", "Raccoon", "Alfheix", "Spyder", "FuHua", "HoriYon"],
+            // Race 2
+            ["Raccoon", "Jedmumu", "Dedratermi", "Spyder", "Frozt", "FuHua", "HoriYon", "Alfheix", "Synocra"],
             // Race 3
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            ["Frozt", "Raccoon", "Synocra", "Spyder", "Dedratermi", "Jedmumu", "Alfheix", "HoriYon", "FuHua"],
             // Race 4
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            ["Synocra", "Frozt", "Dedratermi", "Spyder", "FuHua", "Jedmumu", "Raccoon", "HoriYon", "Alfheix"],
             // Race 5
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
-            // ... Add all 5 races for Finals
+            ["Dedratermi", "Spyder", "Frozt", "Raccoon", "FuHua", "Alfheix", "Jedmumu", "Synocra", "HoriYon"]
         ],
         "Finals": [
-            // Race 1 (Top teams from A and B + Wildcard)
-            ["PlayerA1", "PlayerD1", "PlayerA2", "PlayerD2", "PlayerA3", "PlayerF1", "PlayerF2", "PlayerD3", "PlayerF3"],
-			// Race 2
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            // Race 1
+            ["Eva", "Frozt", "Roidee", "Dedratermi", "Spyder", "Pines", "Boop", "KN", "MrTurtlez"],
+            // Race 2
+            ["Spyder", "Boop", "Frozt", "KN", "Roidee", "Dedratermi", "MrTurtlez", "Eva", "Pines"],
             // Race 3
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"],
+            ["Frozt", "Dedratermi", "KN", "Eva", "Roidee", "MrTurtlez", "Spyder", "Pines", "Boop"],
             // Race 4
-            ["PlayerA1", "PlayerA2", "PlayerA3", "PlayerB1", "PlayerB2", "PlayerC1", "PlayerC2", "PlayerB3", "PlayerC3"],
+            ["Frozt", "Roidee", "Dedratermi", "Boop", "Spyder", "KN", "Eva", "Pines", "MrTurtlez"],
             // Race 5
-            ["PlayerB1", "PlayerA1", "PlayerC1", "PlayerA2", "PlayerB2", "PlayerC2", "PlayerA3", "PlayerB3", "PlayerC3"]
-            // ... Add all 5 races for Finals
+            ["Frozt", "Roidee", "Spyder", "Dedratermi", "Boop", "Eva", "KN", "Pines", "MrTurtlez"]
+        ]
+    },
+
+    // Open 24
+    "Open 24": {
+        "Group A": [
+            // Race 1
+            ["HoriYon", "Raccoon", "Boop", "Cefiro", "CarmineView", "FuHua", "Zixen", "Minty", "Synocra"],
+            // Race 2
+            ["CarmineView", "HoriYon", "Boop", "Zixen", "Synocra", "FuHua", "Cefiro", "Minty", "Raccoon"],
+            // Race 3
+            ["CarmineView", "Cefiro", "Raccoon", "Zixen", "HoriYon", "Minty", "Boop", "Synocra", "FuHua"],
+            // Race 4
+            ["CarmineView", "Boop", "HoriYon", "Zixen", "Raccoon", "Cefiro", "Synocra", "FuHua", "Minty"],
+            // Race 5
+            ["Boop", "CarmineView", "HoriYon", "Cefiro", "Synocra", "FuHua", "Zixen", "Minty", "Raccoon"]
+        ],
+        "Group B": [
+            // Race 1
+            ["Dedratermi", "Alfheix", "Frozt", "Jedmumu", "Sumpfranze", "Kenesu", "Teki", "Pines", "Spyder"],
+            // Race 2
+            ["Dedratermi", "Sumpfranze", "Jedmumu", "Alfheix", "Kenesu", "Frozt", "Teki", "Pines", "Spyder"],
+            // Race 3
+            ["Frozt", "Dedratermi", "Jedmumu", "Alfheix", "Sumpfranze", "Teki", "Kenesu", "Pines", "Spyder"],
+            // Race 4
+            ["Dedratermi", "Frozt", "Teki", "Sumpfranze", "Jedmumu", "Kenesu", "Alfheix", "Pines", "Spyder"],
+            // Race 5
+            ["Dedratermi", "Sumpfranze", "Jedmumu", "Frozt", "Alfheix", "Teki", "Pines", "Kenesu", "Spyder"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Boop", "HoriYon", "Cefiro", "Dedratermi", "Teki", "CarmineView", "Synocra", "Minty", "Kenesu"],
+            // Race 2
+            ["CarmineView", "Dedratermi", "Cefiro", "Boop", "Teki", "Synocra", "Kenesu", "HoriYon", "Minty"],
+            // Race 3
+            ["Boop", "CarmineView", "HoriYon", "Dedratermi", "Synocra", "Cefiro", "Teki", "Kenesu", "Minty"],
+            // Race 4
+            ["Cefiro", "HoriYon", "Synocra", "Dedratermi", "CarmineView", "Boop", "Teki", "Kenesu", "Minty"],
+            // Race 5
+            ["HoriYon", "Dedratermi", "CarmineView", "Synocra", "Boop", "Kenesu", "Cefiro", "Teki", "Minty"]
+        ]
+    },
+
+    // Open 25
+    "Open 25": {
+        "Group A": [
+            // Race 1
+            ["Eva", "Roidee", "Lain", "Kenesu", "Sumpfranze", "KN", "Rihito", "Dedratermi", "Synocra"],
+            // Race 2
+            ["Lain", "Rihito", "Roidee", "Eva", "Sumpfranze", "KN", "Kenesu", "Dedratermi", "Synocra"],
+            // Race 3
+            ["Eva", "Rihito", "Roidee", "Dedratermi", "Kenesu", "Sumpfranze", "Lain", "KN", "Synocra"],
+            // Race 4
+            ["Eva", "Roidee", "Sumpfranze", "Lain", "Dedratermi", "KN", "Kenesu", "Rihito", "Synocra"],
+            // Race 5
+            ["KN", "Roidee", "Rihito", "Kenesu", "Eva", "Dedratermi", "Sumpfranze", "Synocra", "Lain"]
+        ],
+        "Group B": [
+            // Race 1
+            ["Zixen", "Jedmumu", "Pines", "Alfheix", "Raccoon", "Boop", "HoriYon", "FuHua", "Frozt"],
+            // Race 2
+            ["Zixen", "Raccoon", "Alfheix", "Jedmumu", "Frozt", "HoriYon", "Boop", "Pines", "FuHua"],
+            // Race 3
+            ["HoriYon", "Boop", "Raccoon", "Zixen", "Alfheix", "Frozt", "Pines", "Jedmumu", "FuHua"],
+            // Race 4
+            ["Jedmumu", "Boop", "Pines", "Zixen", "Alfheix", "HoriYon", "FuHua", "Raccoon", "Frozt"],
+            // Race 5
+            ["Jedmumu", "Raccoon", "HoriYon", "Boop", "Zixen", "FuHua", "Frozt", "Alfheix", "Pines"]
+        ],
+        "Finals": [
+            // Race 1
+            ["KN", "Jedmumu", "Frozt", "Kenesu", "Alfheix", "Pines", "Zixen", "Roidee", "Raccoon"],
+            // Race 2
+            ["Zixen", "Raccoon", "Jedmumu", "Pines", "Kenesu", "Alfheix", "Roidee", "Frozt", "KN"],
+            // Race 3
+            ["Zixen", "KN", "Raccoon", "Kenesu", "Roidee", "Jedmumu", "Pines", "Alfheix", "Frozt"],
+            // Race 4
+            ["Jedmumu", "Alfheix", "Pines", "Roidee", "Kenesu", "Zixen", "Frozt", "Raccoon", "KN"],
+            // Race 5
+            ["Jedmumu", "Frozt", "Roidee", "Zixen", "Raccoon", "KN", "Pines", "Alfheix", "Kenesu"]
+        ]
+    },
+
+    // Open 26
+    "Open 26": {
+        "Group A": [
+            // Race 1
+            ["Cefiro", "Frozt", "Zixen", "HoriYon", "Alfheix", "Jedmumu", "Kenesu", "Rihito", "NarrativeCrocodiles"],
+            // Race 2
+            ["Cefiro", "Rihito", "Zixen", "Alfheix", "Kenesu", "HoriYon", "Frozt", "Jedmumu", "NarrativeCrocodiles"],
+            // Race 3
+            ["HoriYon", "Rihito", "Kenesu", "NarrativeCrocodiles", "Jedmumu", "Frozt", "Alfheix", "Cefiro", "Zixen"],
+            // Race 4
+            ["Cefiro", "Rihito", "Zixen", "Kenesu", "Jedmumu", "Alfheix", "HoriYon", "NarrativeCrocodiles", "Frozt"],
+            // Race 5
+            ["Cefiro", "Zixen", "Frozt", "Rihito", "Alfheix", "HoriYon", "NarrativeCrocodiles", "Kenesu", "Jedmumu"]
+        ],
+        "Group B": [
+            // Race 1
+            ["Synocra", "Roidee", "Eva", "Boop", "Divine", "Dedratermi", "Raccoon", "Mixsy", "Minty"],
+            // Race 2
+            ["Dedratermi", "Eva", "Roidee", "Mixsy", "Boop", "Divine", "Synocra", "Raccoon", "Minty"],
+            // Race 3
+            ["Dedratermi", "Eva", "Mixsy", "Synocra", "Boop", "Roidee", "Divine", "Raccoon", "Minty"],
+            // Race 4
+            ["Synocra", "Mixsy", "Raccoon", "Dedratermi", "Roidee", "Boop", "Divine", "Eva", "Minty"],
+            // Race 5
+            ["Dedratermi", "Synocra", "Roidee", "Boop", "Mixsy", "Divine", "Raccoon", "Eva", "Minty"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Synocra", "Cefiro", "Dedratermi", "Eva", "Roidee", "Divine", "Zixen", "Boop", "NarrativeCrocodiles"],
+            // Race 2
+            ["Synocra", "Divine", "Cefiro", "Roidee", "Boop", "Dedratermi", "Zixen", "Eva", "NarrativeCrocodiles"],
+            // Race 3
+            ["Zixen", "Dedratermi", "Boop", "Roidee", "Cefiro", "NarrativeCrocodiles", "Synocra", "Eva", "Divine"],
+            // Race 4
+            ["Zixen", "Roidee", "Synocra", "Dedratermi", "Cefiro", "Divine", "NarrativeCrocodiles", "Eva", "Boop"],
+            // Race 5
+            ["Boop", "Synocra", "Zixen", "Dedratermi", "Roidee", "Cefiro", "NarrativeCrocodiles", "Eva", "Divine"]
+        ]
+    },
+
+    // Open 27
+    "Open 27": {
+        "Group A": [
+            // Race 1
+            ["Jedmumu", "Teki", "Cefiro", "Alfheix", "Zixen", "Divine", "Boop", "Kenesu"],
+            // Race 2
+            ["Teki", "Divine", "Jedmumu", "Cefiro", "Boop", "Alfheix", "Zixen", "Kenesu"],
+            // Race 3
+            ["Teki", "Jedmumu", "Boop", "Cefiro", "Zixen", "Kenesu", "Divine", "Alfheix"],
+            // Race 4
+            ["Divine", "Cefiro", "Zixen", "Jedmumu", "Teki", "Kenesu", "Boop", "Alfheix"],
+            // Race 5
+            ["Teki", "Jedmumu", "Zixen", "Cefiro", "Divine", "Alfheix", "Kenesu", "Boop"]
+        ],
+        "Group B": [
+            // Race 1
+            ["HoriYon", "KN", "Roidee", "Rihito", "Bunsen", "Minty", "Synocra", "Raccoon", "Mixsy"],
+            // Race 2
+            ["Rihito", "HoriYon", "Roidee", "Minty", "Bunsen", "Synocra", "Mixsy", "Raccoon", "KN"],
+            // Race 3
+            ["Bunsen", "HoriYon", "Raccoon", "Roidee", "Synocra", "KN", "Rihito", "Minty", "Mixsy"],
+            // Race 4
+            ["Roidee", "KN", "Bunsen", "Raccoon", "HoriYon", "Mixsy", "Rihito", "Minty", "Synocra"],
+            // Race 5
+            ["Raccoon", "Synocra", "Bunsen", "Roidee", "Rihito", "HoriYon", "KN", "Minty", "Mixsy"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Cefiro", "Jedmumu", "Bunsen", "Roidee", "Divine", "Teki", "Alfheix", "Minty"],
+            // Race 2
+            ["Teki", "Jedmumu", "Cefiro", "Divine", "Roidee", "Alfheix", "Bunsen", "Minty"],
+            // Race 3
+            ["Roidee", "Cefiro", "Teki", "Alfheix", "Jedmumu", "Bunsen", "Minty", "Divine"],
+            // Race 4
+            ["Jedmumu", "Teki", "Alfheix", "Cefiro", "Bunsen", "Roidee", "Divine", "Minty"],
+            // Race 5
+            ["Roidee", "Jedmumu", "Teki", "Divine", "Alfheix", "Cefiro", "Bunsen", "Minty"]
+        ]
+    },
+
+    // Open 28
+    "Open 28": {
+        "Group A": [
+            // Race 1
+            ["Frozt", "Bunsen", "Roidee", "FuHua", "Raccoon", "Synocra", "Pines", "Zixen", "Cefiro"],
+            // Race 2
+            ["Roidee", "Frozt", "Bunsen", "Raccoon", "Pines", "FuHua", "Synocra", "Zixen", "Cefiro"],
+            // Race 3
+            ["Frozt", "Zixen", "Roidee", "Synocra", "Pines", "FuHua", "Raccoon", "Bunsen", "Cefiro"],
+            // Race 4
+            ["Synocra", "Raccoon", "Zixen", "Frozt", "Roidee", "FuHua", "Pines", "Bunsen", "Cefiro"],
+            // Race 5
+            ["Frozt", "Roidee", "Zixen", "Synocra", "Raccoon", "Bunsen", "FuHua", "Pines", "Cefiro"]
+        ],
+        "Group B": [
+            // Race 1
+            ["Kenesu", "Mixsy", "Draguin", "Jedmumu", "Rihito", "HoriYon", "Dedratermi", "Boop", "KN"],
+            // Race 2
+            ["Draguin", "Mixsy", "Kenesu", "Dedratermi", "Rihito", "Jedmumu", "KN", "HoriYon", "Boop"],
+            // Race 3
+            ["Kenesu", "Rihito", "Draguin", "HoriYon", "Mixsy", "Dedratermi", "Boop", "Jedmumu", "KN"],
+            // Race 4
+            ["Draguin", "HoriYon", "Kenesu", "Dedratermi", "Mixsy", "KN", "Jedmumu", "Boop", "Rihito"],
+            // Race 5
+            ["Draguin", "Rihito", "Mixsy", "HoriYon", "Kenesu", "Jedmumu", "KN", "Dedratermi", "Boop"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Frozt", "FuHua", "Jedmumu", "Kenesu", "Synocra", "Roidee", "Bunsen", "Rihito", "Zixen"],
+            // Race 2
+            ["Frozt", "Zixen", "Rihito", "Bunsen", "Kenesu", "Synocra", "Jedmumu", "FuHua", "Roidee"],
+            // Race 3
+            ["Synocra", "Rihito", "Frozt", "Zixen", "Jedmumu", "Bunsen", "FuHua", "Roidee", "Kenesu"],
+            // Race 4
+            ["Frozt", "Roidee", "FuHua", "Zixen", "Jedmumu", "Synocra", "Kenesu", "Rihito", "Bunsen"],
+            // Race 5
+            ["Frozt", "Bunsen", "Roidee", "Synocra", "FuHua", "Rihito", "Jedmumu", "Kenesu", "Zixen"]
         ]
     }
 };
-
-
-
-
