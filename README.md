@@ -4,10 +4,10 @@ A lightweight, browser-based dashboard for analyzing *Uma Musume Pretty Derby* t
 
 ## ✨ Features
 
-* **📊 Dynamic Tier Lists:** Automatically generates S-F tier lists based on usage ("Dominance %") for both Umas and Trainers.
+* **📊 Dynamic Tier Lists:** Automatically generates S-F tier lists based on **True Win Rate** (Wins / Races Run) for both Umas and Trainers.
 * **📈 Comprehensive Statistics:**
-    * **Uma Stats:** Picks, Race Wins, Dominance %, Tournament Win %, and Ban Rate.
-    * **Trainer Stats:** Entries, Race Wins, Tournament Win %, Most Used Uma, and "Ace" (Best Performing) Uma.
+    * **Uma Stats:** Picks, Race Wins, True Win Rate %, Tournament Win %, and Ban Rate.
+    * **Trainer Stats:** Entries, Race Wins, True Win Rate %, Most Used Uma, and "Ace" (Best Performing) Uma.
 * **🔍 Filtering:** Filter data by **Surface** (Turf/Dirt) and **Distance** (Short/Mile/Medium/Long).
 * **🎨 Theming:** Includes 9 distinct color themes (Default Dark, Ram, Rem, Miku, etc.) with local storage persistence.
 * **📱 Responsive Design:** Optimized for both desktop and mobile viewing.
@@ -39,10 +39,13 @@ All data is stored in `data.js`. To add new tournament results, you need to upda
 ### 1. Add Race Results (`compactData`)
 Add rows to the `compactData` array. Each row represents **one entry** in a race.
 
+**Note:** The last number is **Races Run**, representing the actual number of races the character participated in (e.g., 5 for Group Stage exit, 10 or 15 for Finals).
+
 ```javascript
 const compactData = [
-  // [Trainer, Uma Name, Wins, Surface, Tournament ID, Base Name, Variant, WinShare]
-  ["TrainerName", "Oguri Cap (Christmas)", 1, "2500m Turf (R)", "Open 28", "Oguri Cap", "Christmas", 0.4],
+  // [Trainer, Uma Name, Wins, Surface, Tournament ID, Base Name, Variant, Races Run]
+  ["TrainerName", "Oguri Cap (Christmas)", 1, "2500m Turf (R)", "Open 28", "Oguri Cap", "Christmas", 5],
+  ["TrainerName", "Gold Ship (Original)", 3, "2500m Turf (R)", "Open 28", "Gold Ship", "Original", 10],
   ...
 ];
 ```
@@ -70,11 +73,12 @@ const tournamentBans = {
 ## 🛠 Customization
 
 ### Changing Tier Thresholds
-The tier list logic is located in `script.js` inside the `renderTierList` function. You can adjust the percentages required for each tier:
-* **S Tier:** > 12.0% Dominance
-* **A Tier:** > 8.0% Dominance
-* **B Tier:** > 5.0% Dominance
-* **C Tier:** > 2.0% Dominance
+The tier list logic is located in `script.js` inside the `renderTierList` function. You can adjust the percentages required for each tier. Current defaults are based on **Win Rate** (Wins / Races Run):
+
+* **S Tier:** ≥ 20.0% Win Rate
+* **A Tier:** ≥ 12.0% Win Rate
+* **B Tier:** ≥ 8.0% Win Rate
+* **C Tier:** ≥ 4.0% Win Rate
 
 ### Adding Themes
 Themes are defined in `style.css`. You can add new color schemes by creating a new `[data-theme="name"]` block and defining the primary, secondary, and background colors.
