@@ -4109,7 +4109,7 @@ const tournamentWinners = {
 	"Open 26": ["Synocra", "Dedratermi", "Eva"],
 	"Open 27": ["Jedmumu", "Alfheix", "Divine"],
     "Open 28": ["Frozt", "FuHua", "Bunsen"],
-	"Open 29": ["Boop", "Mixsy", "Frozt"]
+	"Open 29": ["Boop", "FuHua", "MetaHayato"]
 };
 const tournamentBans = {
     "Open 7": [
@@ -4647,3 +4647,4 @@ const tournamentRaceResults = {
     }
 
 };
+
