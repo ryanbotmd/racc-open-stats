@@ -4923,5 +4923,3 @@ const tournamentRaceResults = {
         ]
     }
 };
-
-
