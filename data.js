@@ -4118,7 +4118,40 @@ const compactData = [
   ["JoeWheeler", "Mejiro Ryan (Original)", 0, "1800m Turf (R)", "Unofficial 1", "Mejiro Ryan", "Original", 5],
   ["Jedmumu", "Fuji Kiseki (Original)", 0, "1800m Turf (R)", "Unofficial 1", "Fuji Kiseki", "Original", 5],
   ["FuHua", "Hishi Akebono (Original)", 0, "1800m Turf (R)", "Unofficial 1", "Hishi Akebono", "Original", 5],
-  ["Spyder", "Mihono Bourbon (Original)", 0, "1800m Turf (R)", "Unofficial 1", "Mihono Bourbon", "Original", 5]
+  ["Spyder", "Mihono Bourbon (Original)", 0, "1800m Turf (R)", "Unofficial 1", "Mihono Bourbon", "Original", 5],
+	
+  ["FuHua", "Hishi Amazon (Original)", 2, "2000m Turf (L)", "Open 31", "Hishi Amazon", "Original", 5],
+  ["Roidee", "Taiki Shuttle (Original)", 1, "2000m Turf (L)", "Open 31", "Taiki Shuttle", "Original", 5],
+  ["Pines", "Mejiro McQueen (Original)", 0, "2000m Turf (L)", "Open 31", "Mejiro McQueen", "Original", 5],
+  ["Raccoon", "Manhattan Cafe (Original)", 1, "2000m Turf (L)", "Open 31", "Manhattan Cafe", "Original", 5],
+  ["Boop", "Super Creek (Halloween)", 1, "2000m Turf (L)", "Open 31", "Super Creek", "Halloween", 5],
+  ["Bunsen", "Oguri Cap (Original)", 0, "2000m Turf (L)", "Open 31", "Oguri Cap", "Original", 5],
+  ["Sumpfranze", "Super Creek (Halloween)", 0, "2000m Turf (L)", "Open 31", "Super Creek", "Halloween", 5],
+  ["Mixsy", "Tokai Teio (Original)", 0, "2000m Turf (L)", "Open 31", "Tokai Teio", "Original", 5],
+  ["Kenesu", "Oguri Cap (Original)", 0, "2000m Turf (L)", "Open 31", "Oguri Cap", "Original", 5],
+  ["KN", "Mejiro Dober (Original)", 0, "2000m Turf (L)", "Open 31", "Mejiro Dober", "Original", 5],
+  ["Horiyon", "Oguri Cap (Original)", 0, "2000m Turf (L)", "Open 31", "Oguri Cap", "Original", 5],
+  ["Minty", "Tokai Teio (Anime)", 0, "2000m Turf (L)", "Open 31", "Tokai Teio", "Anime", 5],
+
+  ["Roidee", "Grass Wonder (Original)", 5, "1800m Turf (R)", "Open 32", "Grass Wonder", "Original", 10],
+  ["Pines", "Daiwa Scarlet (Original)", 0, "1800m Turf (R)", "Open 32", "Daiwa Scarlet", "Original", 10],
+  ["Cefiro", "Tokai Teio (Anime)", 2, "1800m Turf (R)", "Open 32", "Tokai Teio", "Anime", 10],
+  ["FuHua", "Hishi Akebono (Original)", 1, "1800m Turf (R)", "Open 32", "Hishi Akebono", "Original", 10],
+  ["Bunsen", "Daiwa Scarlet (Original)", 0, "1800m Turf (R)", "Open 32", "Daiwa Scarlet", "Original", 10],
+  ["Keejo", "Gold Ship (Original)", 2, "1800m Turf (R)", "Open 32", "Gold Ship", "Original", 10],
+  ["Jedmumu", "Tokai Teio (Anime)", 1, "1800m Turf (R)", "Open 32", "Tokai Teio", "Anime", 10],
+  ["Kenesu", "Nice Nature (Original)", 1, "1800m Turf (R)", "Open 32", "Nice Nature", "Original", 10],
+  ["Sumpfranze", "Vodka (Original)", 2, "1800m Turf (R)", "Open 32", "Vodka", "Original", 10],
+
+  ["Draguin", "Oguri Cap (Original)", 1, "1800m Turf (R)", "Open 32", "Oguri Cap", "Original", 5],
+  ["Dedratermi", "Special Week (Original)", 0, "1800m Turf (R)", "Open 32", "Special Week", "Original", 5],
+  ["Synocra", "Grass Wonder (Original)", 0, "1800m Turf (R)", "Open 32", "Grass Wonder", "Original", 5],
+  ["Raccoon", "Sakura Bakushin O (Original)", 0, "1800m Turf (R)", "Open 32", "Sakura Bakushin O", "Original", 5],
+  ["Horiyon", "Oguri Cap (Original)", 0, "1800m Turf (R)", "Open 32", "Oguri Cap", "Original", 5],
+  ["Mixsy", "Grass Wonder (Original)", 0, "1800m Turf (R)", "Open 32", "Grass Wonder", "Original", 5],
+  ["Frozt", "Daiwa Scarlet (Original)", 0, "1800m Turf (R)", "Open 32", "Daiwa Scarlet", "Original", 5],
+  ["Boop", "Mihono Bourbon (Original)", 0, "1800m Turf (R)", "Open 32", "Mihono Bourbon", "Original", 5],
+  ["MetaHayato", "Mejiro Ryan (Original)", 0, "1800m Turf (R)", "Open 32", "Mejiro Ryan", "Original", 5]
 ];
 
 const tournamentWinners = {
@@ -4151,7 +4184,9 @@ const tournamentWinners = {
     "Open 28": ["Frozt", "FuHua", "Bunsen"],
 	"Open 29": ["Boop", "FuHua", "MetaHayato"],
 	"Open 30": ["MetaHayato", "Spyder", "FuHua"],
-	"Unofficial 1": ["Sumpfranze", "Kenesu", "Boop"]
+	"Unofficial 1": ["Sumpfranze", "Kenesu", "Boop"],
+	"Open 31": ["FuHua", "Roidee", "Pines"],
+	"Open 32": ["Pines", "Cefiro", "Keejo"],
 };
 const tournamentBans = {
     "Open 7": [
@@ -4298,6 +4333,20 @@ const tournamentBans = {
         "Seiun Sky (Original)",
         "Oguri Cap (Original)"
     ],
+	"Open 31": [
+        "Gold Ship (Original)",
+        "Seiun Sky (Original)",
+        "Silence Suzuka (Original)",
+        "Narita Taishin (Original)",
+        "El Condor Pasa (Original)"
+    ],
+	"Open 32": [
+        "Mejiro Dober (Original)",
+        "Seiun Sky (Original)",
+        "Maruzensky (Summer)",
+        "Silence Suzuka (Original)"
+    ],
+	
 };
 
 if (typeof module !== 'undefined') {
@@ -4816,6 +4865,63 @@ const tournamentRaceResults = {
             // Race 5
             ["Mixsy", "Boop", "Kenesu", "DQ", "Roidee", "Pines", "Sumpfranze", "Draguin", "Teki"]
         ]
+    },
+
+	// Open 31
+    "Open 31": {
+        "Finals": [
+            // Race 1
+            ["FuHua", "Mixsy", "Bunsen", "Sumpfranze", "Roidee", "Pines", "Kenesu", "KN", "Raccoon", "Boop", "Horiyon", "Minty"],
+            // Race 2
+            ["Roidee", "FuHua", "Pines", "Raccoon", "Bunsen", "Sumpfranze", "Horiyon", "Mixsy", "Boop", "KN", "Kenesu", "Minty"],
+            // Race 3
+            ["FuHua", "Kenesu", "Horiyon", "Bunsen", "Roidee", "Mixsy", "Boop", "Sumpfranze", "Pines", "KN", "Raccoon", "Minty"],
+            // Race 4
+            ["Raccoon", "Sumpfranze", "Bunsen", "FuHua", "Pines", "Boop", "Mixsy", "Kenesu", "KN", "Roidee", "Horiyon", "Minty"],
+            // Race 5
+            ["Boop", "Sumpfranze", "Bunsen", "Horiyon", "FuHua", "Kenesu", "Pines", "Raccoon", "Roidee", "Mixsy", "KN", "Minty"]
+        ]
+    },
+
+	// Open 32
+    "Open 32": {
+        "Group A": [
+            // Race 1
+            ["Keejo", "Cefiro", "Dedratermi", "Synocra", "Raccoon", "Draguin", "Pines", "Horiyon", "Mixsy"],
+            // Race 2
+            ["Draguin", "Horiyon", "Pines", "Cefiro", "Keejo", "Dedratermi", "Mixsy", "Synocra", "Raccoon"],
+            // Race 3
+            ["Keejo", "Cefiro", "Mixsy", "Raccoon", "Pines", "Draguin", "Horiyon", "Dedratermi", "Synocra"],
+            // Race 4
+            ["Cefiro", "Pines", "Synocra", "Horiyon", "Mixsy", "Draguin", "Keejo", "Dedratermi", "Raccoon"],
+            // Race 5
+            ["Keejo", "Synocra", "Raccoon", "Dedratermi", "Cefiro", "Mixsy", "Draguin", "Pines", "Horiyon"]
+        ],
+        "Group B": [
+            // Race 1
+            ["Sumpfranze", "FuHua", "Roidee", "Frozt", "Bunsen", "Kenesu", "Boop", "Jedmumu", "MetaHayato"],
+            // Race 2
+            ["Roidee", "Kenesu", "Bunsen", "FuHua", "Jedmumu", "MetaHayato", "Sumpfranze", "Boop", "Frozt"],
+            // Race 3
+            ["Roidee", "Jedmumu", "Kenesu", "Boop", "Bunsen", "FuHua", "MetaHayato", "Sumpfranze", "Frozt"],
+            // Race 4
+            ["Roidee", "Jedmumu", "Boop", "FuHua", "Bunsen", "Kenesu", "Sumpfranze", "Frozt", "MetaHayato"],
+            // Race 5
+            ["FuHua", "Sumpfranze", "Jedmumu", "Boop", "Roidee", "Frozt", "Bunsen", "MetaHayato", "Kenesu"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Roidee", "Pines", "Cefiro", "FuHua", "Bunsen", "Keejo", "Jedmumu", "Kenesu", "Sumpfranze"],
+            // Race 2
+            ["Roidee", "Jedmumu", "Cefiro", "Pines", "FuHua", "Kenesu", "Keejo", "Bunsen", "Sumpfranze"],
+            // Race 3
+            ["Cefiro", "FuHua", "Pines", "Kenesu", "Roidee", "Sumpfranze", "Jedmumu", "Bunsen", "Keejo"],
+            // Race 4
+            ["Jedmumu", "Keejo", "FuHua", "Pines", "Roidee", "Sumpfranze", "Bunsen", "Kenesu", "Cefiro"],
+            // Race 5
+            ["Sumpfranze", "Pines", "Cefiro", "Bunsen", "Roidee", "Kenesu", "FuHua", "Jedmumu", "Keejo"]
+        ]
     }
 };
+
 
