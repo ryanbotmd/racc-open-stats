@@ -92,7 +92,8 @@ function getChampionshipPoints(activeTournaments, filteredData) {
         for (const [stageName, races] of Object.entries(stages)) {
             races.forEach((raceResult) => {
                 raceResult.forEach((player, rankIndex) => {
-                    if(player.includes("Player")) return; 
+                    // UPDATED: Filter out "Player" placeholder AND "DQ"
+                    if (player.includes("Player") || player === "DQ") return; 
 
                     // --- A. Process Trainer Points ---
                     if (!stats.trainer[player]) {
@@ -343,6 +344,9 @@ function updateData() {
     document.getElementById('minEntriesVal').textContent = minEntries;
 
     const filtered = rawData.filter(d => {
+        // UPDATED: Exclude "DQ" from stats tables (Uma/Trainer stats)
+        if (d.Trainer === "DQ") return false;
+
         const surfaceMatch = (surface === 'All' || d.Surface.includes(surface));
         const lengthMatch = (length === 'All' || d.DistanceCategory === length);
         return surfaceMatch && lengthMatch;
@@ -412,7 +416,9 @@ function calculateIndividualStats() {
         for (const [stageName, races] of Object.entries(stages)) {
             races.forEach((raceResult) => {
                 raceResult.forEach((player, rankIndex) => {
-                    if(player.includes("Player")) return;
+                    // UPDATED: Filter out "Player" placeholder AND "DQ"
+                    if (player.includes("Player") || player === "DQ") return;
+
                     if (!stats[player]) { stats[player] = { name: player, totalPoints: 0, racesRun: 0 }; }
                     if (rankIndex < POINTS_SYSTEM.length) { stats[player].totalPoints += POINTS_SYSTEM[rankIndex]; }
                     stats[player].racesRun += 1;
