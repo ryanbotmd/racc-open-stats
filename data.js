@@ -4078,7 +4078,26 @@ const compactData = [
     "Narita Brian",
     "Original",
     5
-  ]
+  ],
+  ["MetaHayato", "Maruzensky (Summer)", 2, "2300m Turf (L)", "Open 30", "Maruzensky", "Summer", 10],
+  ["Spyder", "Smart Falcon (Original)", 1, "2300m Turf (L)", "Open 30", "Smart Falcon", "Original", 10],
+  ["FuHua", "Silence Suzuka (Original)", 0, "2300m Turf (L)", "Open 30", "Silence Suzuka", "Original", 10],
+  ["Raccoon", "Agnes Tachyon (Original)", 3, "2300m Turf (L)", "Open 30", "Agnes Tachyon", "Original", 10],
+  ["Frozt", "Hishi Amazon (Original)", 2, "2300m Turf (L)", "Open 30", "Hishi Amazon", "Original", 10],
+  ["Boop", "Mejiro Dober (Original)", 2, "2300m Turf (L)", "Open 30", "Mejiro Dober", "Original", 10],
+  ["Keejo", "Mejiro Dober (Original)", 1, "2300m Turf (L)", "Open 30", "Mejiro Dober", "Original", 10],
+  ["Teki", "Gold Ship (Original)", 0, "2300m Turf (L)", "Open 30", "Gold Ship", "Original", 10],
+  ["Draguin", "Mihono Bourbon (Original)", 0, "2300m Turf (L)", "Open 30", "Mihono Bourbon", "Original", 10],
+  ["HoriYon", "Oguri Cap (Original)", 3, "2300m Turf (L)", "Open 30", "Oguri Cap", "Original", 5],
+  ["Dedratermi", "Special Week (Original)", 1, "2300m Turf (L)", "Open 30", "Special Week", "Original", 5],
+  ["Sumpfranze", "Silence Suzuka (Original)", 0, "2300m Turf (L)", "Open 30", "Silence Suzuka", "Original", 10],
+  ["Eva", "Agnes Tachyon (Original)", 0, "2300m Turf (L)", "Open 30", "Agnes Tachyon", "Original", 5],
+  ["Synocra", "Gold City (Festival)", 0, "2300m Turf (L)", "Open 30", "Gold City", "Festival", 5],
+  ["Zixen", "Nice Nature (Original)", 0, "2300m Turf (L)", "Open 30", "Nice Nature", "Original", 5],
+  ["Mixsy", "Symboli Rudolf (Original)", 0, "2300m Turf (L)", "Open 30", "Symboli Rudolf", "Original", 5],
+  ["Jedmumu", "Tokai Teio (Anime)", 0, "2300m Turf (L)", "Open 30", "Tokai Teio", "Anime", 5],
+  ["Pines", "Mihono Bourbon (Original)", 0, "2300m Turf (L)", "Open 30", "Mihono Bourbon", "Original", 5],
+  ["Bunsen", "Silence Suzuka (Original)", 0, "2300m Turf (L)", "Open 30", "Silence Suzuka", "Original", 5]
 ];
 
 const tournamentWinners = {
@@ -4109,7 +4128,8 @@ const tournamentWinners = {
 	"Open 26": ["Synocra", "Dedratermi", "Eva"],
 	"Open 27": ["Jedmumu", "Alfheix", "Divine"],
     "Open 28": ["Frozt", "FuHua", "Bunsen"],
-	"Open 29": ["Boop", "FuHua", "MetaHayato"]
+	"Open 29": ["Boop", "FuHua", "MetaHayato"],
+	"Open 30": ["MetaHayato", "Spyder", "FuHua"]
 };
 const tournamentBans = {
     "Open 7": [
@@ -4244,7 +4264,12 @@ const tournamentBans = {
 		"Symboli Rudolf (Festival)",
 		"Seiun Sky (Original)",
 		"Silence Suzuka (Original)"
-	]
+	],
+	"Open 30": [
+        "Super Creek (Original)",
+        "Seiun Sky (Original)",
+        "Maruzensky (Original)"
+    ]
 };
 
 if (typeof module !== 'undefined') {
@@ -4683,8 +4708,49 @@ const tournamentRaceResults = {
             // Race 5
             ["Mixsy", "MetaHayato", "Frozt", "FuHua", "Dedratermi", "Alfheix", "Jedmumu", "Boop", "Kenesu"]
         ]
+    },
+
+	// Open 30
+    "Open 30": {
+        "Group A": [
+            // Race 1
+            ["Raccoon", "Keejo", "Eva", "Dedratermi", "Frozt", "Synocra", "Sumpfranze", "Zixen", "Mixsy", "Jedmumu"],
+            // Race 2
+            ["Raccoon", "Dedratermi", "Keejo", "Sumpfranze", "Frozt", "Zixen", "Jedmumu", "Eva", "Mixsy", "Synocra"],
+            // Race 3
+            ["Frozt", "Keejo", "Raccoon", "Mixsy", "Eva", "Sumpfranze", "Dedratermi", "Jedmumu", "Zixen", "Synocra"],
+            // Race 4
+            ["Frozt", "Mixsy", "Raccoon", "Jedmumu", "Dedratermi", "Sumpfranze", "Keejo", "Synocra", "Zixen", "Eva"],
+            // Race 5
+            ["Dedratermi", "Keejo", "Mixsy", "Raccoon", "Frozt", "Eva", "Synocra", "Zixen", "Jedmumu", "Sumpfranze"]
+        ],
+        "Group B": [
+            // Race 1
+            ["MetaHayato", "HoriYon", "Spyder", "Teki", "Boop", "Draguin", "Pines", "FuHua", "Sumpfranze", "Bunsen"],
+            // Race 2
+            ["HoriYon", "Boop", "Spyder", "Draguin", "MetaHayato", "FuHua", "Pines", "Teki", "Sumpfranze", "Bunsen"],
+            // Race 3
+            ["HoriYon", "MetaHayato", "FuHua", "Boop", "Teki", "Sumpfranze", "Draguin", "Spyder", "Bunsen", "Pines"],
+            // Race 4
+            ["Spyder", "HoriYon", "Draguin", "Boop", "Teki", "Sumpfranze", "Bunsen", "MetaHayato", "FuHua", "Pines"],
+            // Race 5
+            ["HoriYon", "Draguin", "Pines", "FuHua", "Teki", "Spyder", "Boop", "MetaHayato", "Sumpfranze", "Bunsen"]
+        ],
+        "Finals": [
+            // Race 1
+            ["Raccoon", "Frozt", "MetaHayato", "FuHua", "Teki", "Spyder", "Boop", "Keejo", "Draguin"],
+            // Race 2
+            ["MetaHayato", "Boop", "Teki", "FuHua", "Frozt", "Spyder", "Draguin", "Keejo", "Raccoon"],
+            // Race 3
+            ["Keejo", "MetaHayato", "Raccoon", "Frozt", "Boop", "Spyder", "Draguin", "Teki", "FuHua"],
+            // Race 4
+            ["Boop", "MetaHayato", "Spyder", "Raccoon", "Teki", "FuHua", "Draguin", "Frozt", "Keejo"],
+            // Race 5
+            ["Boop", "Spyder", "Raccoon", "Teki", "Frozt", "Draguin", "FuHua", "Keejo", "MetaHayato"]
+        ]
     }
 
 };
+
 
 
