@@ -41,18 +41,15 @@ function switchTab(tabId) {
 
 // --- Tier List View Switcher (Slider Logic) ---
 function setTierView(index) {
-    // 1. Update Buttons
     const buttons = document.querySelectorAll('.switch-option');
     buttons.forEach((btn, i) => {
         if (i === index) btn.classList.add('active');
         else btn.classList.remove('active');
     });
 
-    // 2. Move Glider
     const glider = document.getElementById('tierGlider');
     if(glider) glider.style.transform = `translateX(${index * 100}%)`;
 
-    // 3. Show Correct View
     const views = ['view-wr', 'view-dom', 'view-champ'];
     views.forEach((viewId, i) => {
         const el = document.getElementById(viewId);
@@ -72,12 +69,11 @@ function formatName(fullName) {
     return `${mainName} <span class="variant-tag">(${variant})</span>`;
 }
 
-// --- NEW: Calculate Points (Respects Filters & Links Umas) ---
+// --- NEW: Calculate Points & Beat Rate (Respects Filters) ---
 function getChampionshipPoints(activeTournaments, filteredData) {
     let stats = { trainer: {}, uma: {} };
     
     // 1. Create a Map to link Trainer+Tourney -> UmaName
-    // This connects the race results (Trainer Name) to the correct Uma
     const lookupMap = {};
     filteredData.forEach(row => {
         const key = `${row.RawLength}_${row.Trainer}`;
@@ -86,36 +82,46 @@ function getChampionshipPoints(activeTournaments, filteredData) {
 
     // 2. Iterate detailed race results
     for (const [tournamentName, stages] of Object.entries(tournamentRaceResults)) {
-        // FILTER FIX: If tournament isn't in our filtered list (e.g. Surface=Dirt), skip it
         if (!activeTournaments.has(tournamentName)) continue;
 
         for (const [stageName, races] of Object.entries(stages)) {
             races.forEach((raceResult) => {
+                // AUTOMAGIC: Count participants to determine lobby difficulty
+                const lobbySize = raceResult.length; 
+                const possibleOpponents = lobbySize - 1;
+
                 raceResult.forEach((player, rankIndex) => {
-                    // UPDATED: Filter out "Player" placeholder AND "DQ"
+                    // Filter out placeholders and DQ
                     if (player.includes("Player") || player === "DQ") return; 
 
-                    // --- A. Process Trainer Points ---
+                    // Beat Rate Math: If you are 1st (Index 0) in 5-man race, you beat 4 people.
+                    const opponentsBeaten = (lobbySize - 1) - rankIndex;
+
+                    // --- A. Process Trainer ---
                     if (!stats.trainer[player]) {
-                        stats.trainer[player] = { points: 0, races: 0 };
+                        stats.trainer[player] = { points: 0, races: 0, beaten: 0, totalOpp: 0 };
                     }
                     if (rankIndex < POINTS_SYSTEM.length) {
                         stats.trainer[player].points += POINTS_SYSTEM[rankIndex];
                     }
                     stats.trainer[player].races += 1;
+                    stats.trainer[player].beaten += opponentsBeaten;
+                    stats.trainer[player].totalOpp += possibleOpponents;
 
-                    // --- B. Process Uma Points (via Lookup) ---
+                    // --- B. Process Uma (via Lookup) ---
                     const key = `${tournamentName}_${player}`;
                     const umaName = lookupMap[key];
                     
                     if (umaName) {
                         if (!stats.uma[umaName]) {
-                            stats.uma[umaName] = { points: 0, races: 0 };
+                            stats.uma[umaName] = { points: 0, races: 0, beaten: 0, totalOpp: 0 };
                         }
                         if (rankIndex < POINTS_SYSTEM.length) {
                             stats.uma[umaName].points += POINTS_SYSTEM[rankIndex];
                         }
                         stats.uma[umaName].races += 1;
+                        stats.uma[umaName].beaten += opponentsBeaten;
+                        stats.uma[umaName].totalOpp += possibleOpponents;
                     }
                 });
             });
@@ -132,7 +138,7 @@ function calculateStats(filteredData) {
     
     filteredData.forEach(row => activeTournaments.add(row.RawLength));
 
-    // 1. Get Points Data (Using the new Filter-Aware function)
+    // 1. Get Points & Beat Rate Data
     const pointsData = getChampionshipPoints(activeTournaments, filteredData);
 
     // 2. Process Basic Data
@@ -213,14 +219,13 @@ function calculateStats(filteredData) {
             ? (item.wins / item.totalRacesRun * 100).toFixed(1) 
             : "0.0";
 
-        // B. Dominance % (Points Based)
+        // B. Dominance % (NOW: Beat Rate Calculation)
         let dominanceVal = "0.0";
-        // Check either trainer or uma stats in pointsData
         const pStats = type === 'trainer' ? pointsData.trainer[item.name] : pointsData.uma[item.name];
         
-        if (pStats && pStats.races > 0) {
-            const maxPoints = pStats.races * 25; // 25 is max points per race
-            dominanceVal = ((pStats.points / maxPoints) * 100).toFixed(1);
+        if (pStats && pStats.totalOpp > 0) {
+            // Formula: (Opponents Beaten / Total Opponents Faced) * 100
+            dominanceVal = ((pStats.beaten / pStats.totalOpp) * 100).toFixed(1);
         }
 
         // C. Tourney Win %
@@ -304,12 +309,13 @@ function renderTierList(containerId, data, countKey, minReq, sortKey) {
              else if (val >= 10.0) tier = 'B';
              else if (val >= 5.0) tier = 'C';
         } else {
-            // Default Dominance (Points)
-            if (val <= 5.0) tier = 'F';
-            else if (val >= 60.0) tier = 'S'; 
-            else if (val >= 45.0) tier = 'A';
-            else if (val >= 30.0) tier = 'B';
-            else if (val >= 15.0) tier = 'C';
+            // New Dominance (Beat Rate) Thresholds
+            // Beat Rate is usually higher than points %, so we adjust up slightly
+            if (val <= 20.0) tier = 'F';
+            else if (val >= 80.0) tier = 'S'; 
+            else if (val >= 65.0) tier = 'A';
+            else if (val >= 50.0) tier = 'B';
+            else if (val >= 35.0) tier = 'C';
         }
 
         tiers[tier].push(item);
@@ -344,7 +350,7 @@ function updateData() {
     document.getElementById('minEntriesVal').textContent = minEntries;
 
     const filtered = rawData.filter(d => {
-        // UPDATED: Exclude "DQ" from stats tables (Uma/Trainer stats)
+        // Exclude DQ from stats tables
         if (d.Trainer === "DQ") return false;
 
         const surfaceMatch = (surface === 'All' || d.Surface.includes(surface));
@@ -416,7 +422,7 @@ function calculateIndividualStats() {
         for (const [stageName, races] of Object.entries(stages)) {
             races.forEach((raceResult) => {
                 raceResult.forEach((player, rankIndex) => {
-                    // UPDATED: Filter out "Player" placeholder AND "DQ"
+                    // Filter out "Player" placeholder AND "DQ"
                     if (player.includes("Player") || player === "DQ") return;
 
                     if (!stats[player]) { stats[player] = { name: player, totalPoints: 0, racesRun: 0 }; }
