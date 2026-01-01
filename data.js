@@ -4431,11 +4431,26 @@ const tournamentRaceResults = {
             ["Kenesu", "Cefiro", "Pines", "MetaHayato", "Frozt", "Eva", "Spyder", "Raccoon", "HoriYon", "Leficious"]
         ]
     },
-	// Open 6-18 (Data not provided yet)
+	// Open 6-8 (Data not provided yet)
     "Open 6": { "Finals": [] },
     "Open 7": { "Finals": [] },
     "Open 8": { "Finals": [] },
-    "Open 9": { "Finals": [] },
+    // Open 9
+    "Open 9": {
+        "Finals": [
+            // Race 1
+            ["Pines", "MetaHayato", "Teki", "Giga", "Divine", "FuHua", "Kenesu", "Raccoon", "HoriYon"],
+            // Race 2
+            ["Divine", "Teki", "HoriYon", "MetaHayato", "FuHua", "Kenesu", "Pines", "Giga", "Raccoon"],
+            // Race 3
+            ["HoriYon", "Kenesu", "Teki", "Divine", "MetaHayato", "FuHua", "Raccoon", "Giga", "Pines"],
+            // Race 4
+            ["Kenesu", "Giga", "Divine", "Teki", "MetaHayato", "Pines", "HoriYon", "Raccoon", "FuHua"],
+            // Race 5
+            ["HoriYon", "FuHua", "MetaHayato", "Teki", "Kenesu", "Pines", "Divine", "Giga", "Raccoon"]
+        ]
+    },
+	// Open 10-16 (Data not provided yet)
     "Open 10": { "Finals": [] },
     "Open 11": { "Finals": [] },
     "Open 12": { "Finals": [] },
@@ -4971,6 +4986,7 @@ const tournamentRaceResults = {
         ]
     }
 };
+
 
 
 
