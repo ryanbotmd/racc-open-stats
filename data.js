@@ -4356,11 +4356,51 @@ if (typeof module !== 'undefined') {
 const POINTS_SYSTEM = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1];
 
 const tournamentRaceResults = {
-    // Open 1-3 (Data not provided yet)
-    "Open 1": { "Finals": [] },
-    "Open 2": { "Finals": [] },
-    "Open 3": { "Finals": [] },
-
+    // Open 1
+    "Open 1": {
+        "Finals": [
+            // Race 1
+            ["Cefiro", "MetaHayato", "Spyder", "Leficious", "Eva", "Kenesu", "Pines", "Frozt", "Raccoon"],
+            // Race 2
+            ["MetaHayato", "Leficious", "Pines", "Frozt", "Spyder", "Cefiro", "Eva", "Raccoon", "Kenesu"],
+            // Race 3
+            ["Leficious", "Eva", "MetaHayato", "Cefiro", "Kenesu", "Pines", "Spyder", "Frozt", "Raccoon"],
+            // Race 4
+            ["MetaHayato", "Leficious", "Kenesu", "Spyder", "Cefiro", "Pines", "Eva", "Raccoon", "Frozt"],
+            // Race 5
+            ["Leficious", "MetaHayato", "Cefiro", "Eva", "Spyder", "Kenesu", "Frozt", "Raccoon", "Pines"]
+        ]
+    },
+    // Open 2
+    "Open 2": {
+        "Finals": [
+            // Race 1
+            ["Leficious", "MetaHayato", "Pines", "Raccoon", "Spyder", "Giga", "Eva", "Kenesu", "Frozt"],
+            // Race 2
+            ["MetaHayato", "Spyder", "Raccoon", "Frozt", "Pines", "Kenesu", "Leficious", "Eva", "Giga"],
+            // Race 3
+            ["Pines", "Frozt", "Raccoon", "Leficious", "Giga", "MetaHayato", "Eva", "Spyder", "Kenesu"],
+            // Race 4
+            ["Raccoon", "Giga", "Pines", "MetaHayato", "Spyder", "Kenesu", "Leficious", "Eva", "Frozt"],
+            // Race 5
+            ["Raccoon", "Pines", "Giga", "Eva", "MetaHayato", "Spyder", "Leficious", "Kenesu", "Frozt"]
+        ]
+    },
+   // Open 3
+    "Open 3": {
+        "Finals": [
+            // Race 1
+            ["Raccoon", "Pines", "Jans", "Koto", "Frozt", "Synocra", "Leficious", "MetaHayato", "Teki"],
+            // Race 2
+            ["Raccoon", "Teki", "Synocra", "Leficious", "Jans", "MetaHayato", "Koto", "Pines", "Frozt"],
+            // Race 3
+            ["Teki", "Pines", "Jans", "Synocra", "Raccoon", "Leficious", "MetaHayato", "Frozt", "Koto"],
+            // Race 4
+            ["Teki", "Pines", "Jans", "Synocra", "Leficious", "MetaHayato", "Frozt", "Koto", "Raccoon"],
+            // Race 5
+            ["Leficious", "Jans", "Teki", "Synocra", "Raccoon", "MetaHayato", "Pines", "Frozt", "Koto"]
+        ]
+    },
     // Open 4
     "Open 4": {
         "Finals": [
@@ -4376,9 +4416,22 @@ const tournamentRaceResults = {
             ["Leficious", "Honsler", "Sayo", "Synocra", "Sumpfranze", "Buster", "Raccoon", "MetaHayato", "Spyder", "Divine", "Eva", "Kenesu"]
         ]
     },
-
-    // Open 5-16 (Data not provided yet)
-    "Open 5": { "Finals": [] },
+	// Open 5
+    "Open 5": {
+        "Finals": [
+            // Race 1
+            ["Cefiro", "HoriYon", "Leficious", "Pines", "Kenesu", "Eva", "Raccoon", "Frozt", "Spyder", "FuHua"],
+            // Race 2
+            ["HoriYon", "Kenesu", "Cefiro", "Leficious", "Frozt", "Eva", "MetaHayato", "Pines", "Spyder", "FuHua"],
+            // Race 3
+            ["HoriYon", "Leficious", "Pines", "Kenesu", "Frozt", "Spyder", "FuHua", "Eva", "Cefiro", "Raccoon"],
+            // Race 4
+            ["Kenesu", "MetaHayato", "HoriYon", "Frozt", "Leficious", "Eva", "Spyder", "Pines", "Cefiro", "Raccoon"],
+            // Race 5
+            ["Kenesu", "Cefiro", "Pines", "MetaHayato", "Frozt", "Eva", "Spyder", "Raccoon", "HoriYon", "Leficious"]
+        ]
+    },
+	// Open 6-18 (Data not provided yet)
     "Open 6": { "Finals": [] },
     "Open 7": { "Finals": [] },
     "Open 8": { "Finals": [] },
@@ -4392,29 +4445,24 @@ const tournamentRaceResults = {
     "Open 16": { "Finals": [] },
 	
     // Open 17
-    "Open 17": {
-        "Finals": [
-            // Race 1 (Winner: MetaHayato)
-            // Added 0-pointers: Frozt, Kenesu, Cefiro, Eva, FuHua
-            ["MetaHayato", "Synocra", "Sumpfranze", "Teki", "Jedmumu", "Rihito", "Raccoon", "HoriYon", "Alfheix", "Pines", "Frozt", "Kenesu", "Cefiro", "Eva", "FuHua"],
-            
-            // Race 2 (Winner: Synocra)
-            // Added 0-pointers: Sumpfranze, Rihito, Alfheix, Eva, FuHua
-            ["Synocra", "Frozt", "HoriYon", "MetaHayato", "Jedmumu", "Pines", "Kenesu", "Cefiro", "Teki", "Raccoon", "Sumpfranze", "Rihito", "Alfheix", "Eva", "FuHua"],
-            
-            // Race 3 (Winner: Cefiro)
-            // Added 0-pointers: Teki, Jedmumu, Raccoon, Sumpfranze, FuHua
-            ["Cefiro", "MetaHayato", "Kenesu", "Frozt", "Rihito", "HoriYon", "Synocra", "Pines", "Eva", "Alfheix", "Teki", "Jedmumu", "Raccoon", "Sumpfranze", "FuHua"],
-            
-            // Race 4 (Winner: Pines)
-            // Added 0-pointers: Jedmumu, Raccoon, HoriYon, Alfheix, Eva
-            ["Pines", "Cefiro", "Rihito", "Sumpfranze", "Kenesu", "Teki", "Synocra", "MetaHayato", "FuHua", "Frozt", "Jedmumu", "Raccoon", "HoriYon", "Alfheix", "Eva"],
-            
-            // Race 5 (Winner: Jedmumu)
-            // Added 0-pointers: MetaHayato, Teki, Raccoon, Eva, FuHua
-            ["Jedmumu", "Pines", "Synocra", "Alfheix", "Cefiro", "Frozt", "Kenesu", "Sumpfranze", "Rihito", "HoriYon", "MetaHayato", "Teki", "Raccoon", "Eva", "FuHua"]
-        ]
-    },
+	"Open 17": {
+	    "Finals": [
+	        // Race 1 (Winner: MetaHayato)
+	        ["MetaHayato", "Synocra", "Sumpfranze", "Teki", "Jedmumu", "Rihito", "Raccoon", "HoriYon", "Alfheix", "Pines"],
+	        
+	        // Race 2 (Winner: Synocra)
+	        ["Synocra", "Frozt", "HoriYon", "MetaHayato", "Jedmumu", "Pines", "Kenesu", "Cefiro", "Teki", "Raccoon"],
+	        
+	        // Race 3 (Winner: Cefiro)
+	        ["Cefiro", "MetaHayato", "Kenesu", "Frozt", "Rihito", "HoriYon", "Synocra", "Pines", "Eva", "Alfheix"],
+	        
+	        // Race 4 (Winner: Pines)
+	        ["Pines", "Cefiro", "Rihito", "Sumpfranze", "Kenesu", "Teki", "Synocra", "MetaHayato", "FuHua", "Frozt"],
+	        
+	        // Race 5 (Winner: Jedmumu)
+	        ["Jedmumu", "Pines", "Synocra", "Alfheix", "Cefiro", "Frozt", "Kenesu", "Sumpfranze", "Rihito", "HoriYon"]
+	    ]
+	},
 	
 	// Open 18 (Data not provided yet)
     "Open 18": { "Finals": [] },
@@ -4923,5 +4971,6 @@ const tournamentRaceResults = {
         ]
     }
 };
+
 
 
