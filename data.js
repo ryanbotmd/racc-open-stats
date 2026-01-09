@@ -845,8 +845,36 @@ const tournamentRaceResults = {
         ]
     },
     "Open 12": { "Finals": [] },
-    "Open 13": { "Finals": [] },
-    "Open 14": { "Finals": [] },
+    // Open 13
+    "Open 13": {
+        "Finals": [
+            // Race 1
+            ["Teki", "FuHua", "Dedratermi", "Raccoon", "Jedmumu", "Frozt", "Sumpfranze", "HoriYon", "MetaHayato", "Draguin", "Cefiro", "Mudflap", "Spyder", "Kenesu", "Rihito"],
+            // Race 2
+            ["Jedmumu", "Teki", "Sumpfranze", "Dedratermi", "Rihito", "Draguin", "FuHua", "MetaHayato", "Raccoon", "Kenesu", "Frozt", "Cefiro", "Mudflap", "HoriYon", "Spyder"],
+            // Race 3
+            ["Sumpfranze", "Teki", "Jedmumu", "Kenesu", "MetaHayato", "Raccoon", "HoriYon", "Rihito", "Cefiro", "Mudflap", "Frozt", "Dedratermi", "FuHua", "Draguin", "Spyder"],
+            // Race 4
+            ["FuHua", "Dedratermi", "Kenesu", "Raccoon", "Teki", "Draguin", "Jedmumu", "HoriYon", "Mudflap", "Sumpfranze", "MetaHayato", "Spyder", "Frozt", "Cefiro", "Rihito"],
+            // Race 5
+            ["Dedratermi", "Kenesu", "Sumpfranze", "Mudflap", "Teki", "Rihito", "Frozt", "HoriYon", "Raccoon", "Draguin", "Spyder", "MetaHayato", "FuHua", "Cefiro", "Jedmumu"]
+        ]
+    },
+    // Open 14
+    "Open 14": {
+        "Finals": [
+            // Race 1
+            ["Jedmumu", "Dedratermi", "FuHua", "Pines", "Synocra", "HoriYon", "Raccoon", "MetaHayato", "Eva", "Kenesu", "Spyder", "NarrativeCrocodiles"],
+            // Race 2
+            ["Dedratermi", "Pines", "Jedmumu", "Raccoon", "NarrativeCrocodiles", "FuHua", "MetaHayato", "Synocra", "HoriYon", "Kenesu", "Spyder", "Eva"],
+            // Race 3
+            ["MetaHayato", "Spyder", "HoriYon", "FuHua", "Raccoon", "Pines", "Eva", "NarrativeCrocodiles", "Kenesu", "Dedratermi", "Jedmumu", "Synocra"],
+            // Race 4
+            ["Jedmumu", "Dedratermi", "Raccoon", "Kenesu", "Spyder", "Eva", "Pines", "Synocra", "MetaHayato", "HoriYon", "FuHua", "NarrativeCrocodiles"],
+            // Race 5
+            ["MetaHayato", "Raccoon", "Dedratermi", "Synocra", "Pines", "Jedmumu", "FuHua", "Spyder", "HoriYon", "NarrativeCrocodiles", "Kenesu", "Eva"]
+        ]
+    },
     "Open 15": { "Finals": [] },
     "Open 16": { "Finals": [] },
 	
@@ -1377,6 +1405,7 @@ const tournamentRaceResults = {
         ]
     }
 };
+
 
 
 
