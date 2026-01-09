@@ -743,21 +743,62 @@ const tournamentRaceResults = {
     "Open 5": {
         "Finals": [
             // Race 1
-            ["Cefiro", "HoriYon", "Leficious", "Pines", "Kenesu", "Eva", "Raccoon", "Frozt", "Spyder", "FuHua"],
+            ["Cefiro", "HoriYon", "Leficious", "Pines", "Kenesu", "Eva", "Raccoon", "Frozt", "Spyder", "FuHua", "MetaHayato", "Synocra"],
             // Race 2
-            ["HoriYon", "Kenesu", "Cefiro", "Leficious", "Frozt", "Eva", "MetaHayato", "Pines", "Spyder", "FuHua"],
+            ["HoriYon", "Kenesu", "Cefiro", "Leficious", "Frozt", "Eva", "MetaHayato", "Pines", "Spyder", "FuHua", "Raccoon", "Synocra"],
             // Race 3
-            ["HoriYon", "Leficious", "Pines", "Kenesu", "Frozt", "Spyder", "FuHua", "Eva", "Cefiro", "Raccoon"],
+            ["HoriYon", "Leficious", "Pines", "Kenesu", "Frozt", "Spyder", "FuHua", "Eva", "Cefiro", "Raccoon", "MetaHayato", "Synocra"],
             // Race 4
-            ["Kenesu", "MetaHayato", "HoriYon", "Frozt", "Leficious", "Eva", "Spyder", "Pines", "Cefiro", "Raccoon"],
+            ["Kenesu", "MetaHayato", "HoriYon", "Frozt", "Leficious", "Eva", "Spyder", "Pines", "Cefiro", "Raccoon", "FuHua", "Synocra"],
             // Race 5
-            ["Kenesu", "Cefiro", "Pines", "MetaHayato", "Frozt", "Eva", "Spyder", "Raccoon", "HoriYon", "Leficious"]
+            ["Kenesu", "Cefiro", "Pines", "MetaHayato", "Frozt", "Eva", "Spyder", "Raccoon", "HoriYon", "Leficious", "FuHua", "Synocra"]
         ]
     },
-	// Open 6-8 (Data not provided yet)
-    "Open 6": { "Finals": [] },
-    "Open 7": { "Finals": [] },
-    "Open 8": { "Finals": [] },
+	// Open 6
+    "Open 6": {
+        "Finals": [
+            // Race 1
+            ["MetaHayato", "Raccoon", "Kenesu", "Teki", "BossNerd", "Leficious", "Cefiro", "HoriYon", "Buster", "Eva", "Sayo", "Synocra", "Frozt", "Rihito", "FuHua"],
+            // Race 2
+            ["MetaHayato", "Teki", "Raccoon", "Eva", "Cefiro", "HoriYon", "Kenesu", "Sayo", "Leficious", "Synocra", "FuHua", "Frozt", "Rihito", "Buster", "BossNerd"],
+            // Race 3
+            ["HoriYon", "Leficious", "Teki", "Kenesu", "MetaHayato", "BossNerd", "FuHua", "Raccoon", "Rihito", "Cefiro", "Buster", "Eva", "Sayo", "Synocra", "Frozt"],
+            // Race 4
+            ["MetaHayato", "Raccoon", "BossNerd", "Teki", "HoriYon", "Cefiro", "Synocra", "Buster", "Rihito", "Leficious", "Eva", "FuHua", "Sayo", "Frozt", "Kenesu"],
+            // Race 5
+            ["MetaHayato", "Raccoon", "Teki", "BossNerd", "FuHua", "HoriYon", "Leficious", "Synocra", "Buster", "Eva", "Frozt", "Sayo", "Rihito", "Kenesu", "Cefiro"]
+        ]
+    },
+    // Open 7
+    "Open 7": {
+        "Finals": [
+            // Race 1
+            ["MetaHayato", "Synocra", "Kenesu", "Teki", "Giga", "Divine", "Raccoon", "Cefiro", "HoriYon", "Eva", "Spyder", "Pines"],
+            // Race 2
+            ["Cefiro", "Giga", "HoriYon", "Synocra", "MetaHayato", "Kenesu", "Teki", "Spyder", "Raccoon", "Pines", "Divine", "Eva"],
+            // Race 3
+            ["Spyder", "Cefiro", "HoriYon", "Giga", "Teki", "Kenesu", "Synocra", "Eva", "Pines", "Divine", "Raccoon", "MetaHayato"],
+            // Race 4
+            ["Raccoon", "Giga", "Teki", "MetaHayato", "Kenesu", "Cefiro", "HoriYon", "Synocra", "Spyder", "Divine", "Pines", "Eva"],
+            // Race 5
+            ["Raccoon", "Giga", "Eva", "MetaHayato", "Kenesu", "Cefiro", "Synocra", "Spyder", "Teki", "Pines", "HoriYon", "Divine"]
+        ]
+    },
+    // Open 8
+    "Open 8": {
+        "Finals": [
+            // Race 1
+            ["MetaHayato", "FuHua", "HoriYon", "Raccoon", "Pines", "Frozt", "Cefiro", "Kenesu", "Eva", "Bresto", "Teki", "Divine"],
+            // Race 2
+            ["Pines", "MetaHayato", "Raccoon", "Teki", "HoriYon", "FuHua", "Kenesu", "Cefiro", "Bresto", "Eva", "Frozt", "Divine"],
+            // Race 3
+            ["MetaHayato", "HoriYon", "Kenesu", "Raccoon", "Eva", "Cefiro", "Pines", "Teki", "Bresto", "Frozt", "FuHua", "Divine"],
+            // Race 4
+            ["HoriYon", "FuHua", "Raccoon", "MetaHayato", "Kenesu", "Cefiro", "Pines", "Eva", "Bresto", "Teki", "Frozt", "Divine"],
+            // Race 5
+            ["Cefiro", "HoriYon", "Raccoon", "Pines", "FuHua", "Eva", "MetaHayato", "Teki", "Frozt", "Kenesu", "Bresto", "Divine"]
+        ]
+    },
     // Open 9
     "Open 9": {
         "Finals": [
@@ -773,8 +814,21 @@ const tournamentRaceResults = {
             ["HoriYon", "FuHua", "MetaHayato", "Teki", "Kenesu", "Pines", "Divine", "Giga", "Raccoon"]
         ]
     },
-	// Open 10-16 (Data not provided yet)
-    "Open 10": { "Finals": [] },
+	// Open 10
+    "Open 10": {
+        "Finals": [
+            // Race 1
+            ["Pines", "Roidee", "Rihito", "Sumpfranze", "HoriYon", "Divine", "Cefiro", "MetaHayato", "KN", "Raccoon", "Kenesu", "FuHua", "Giga", "Spyder", "Teki"],
+            // Race 2
+            ["Cefiro", "HoriYon", "Sumpfranze", "Pines", "Rihito", "Spyder", "Roidee", "Teki", "FuHua", "MetaHayato", "KN", "Kenesu", "Giga", "Raccoon", "Divine"],
+            // Race 3
+            ["Pines", "Rihito", "Divine", "Roidee", "HoriYon", "MetaHayato", "Cefiro", "Giga", "Raccoon", "Sumpfranze", "Kenesu", "Spyder", "Teki", "FuHua", "KN"],
+            // Race 4
+            ["Giga", "Divine", "Sumpfranze", "Cefiro", "HoriYon", "Roidee", "FuHua", "MetaHayato", "Pines", "Kenesu", "KN", "Raccoon", "Rihito", "Spyder", "Teki"],
+            // Race 5
+            ["HoriYon", "Cefiro", "Roidee", "Raccoon", "Giga", "MetaHayato", "Spyder", "Pines", "Rihito", "FuHua", "Sumpfranze", "Kenesu", "KN", "Divine", "Teki"]
+        ]
+    },
     "Open 11": { "Finals": [] },
     "Open 12": { "Finals": [] },
     "Open 13": { "Finals": [] },
@@ -1309,6 +1363,7 @@ const tournamentRaceResults = {
         ]
     }
 };
+
 
 
 
