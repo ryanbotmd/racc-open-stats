@@ -311,11 +311,11 @@ function renderTierList(containerId, data, countKey, minReq, sortKey) {
         } else {
             // New Dominance (Beat Rate) Thresholds
             // Beat Rate is usually higher than points %, so we adjust up slightly
-            if (val <= 20.0) tier = 'F';
-            else if (val >= 80.0) tier = 'S'; 
-            else if (val >= 65.0) tier = 'A';
-            else if (val >= 50.0) tier = 'B';
-            else if (val >= 35.0) tier = 'C';
+            if (val <= 15.0) tier = 'F';
+            else if (val >= 65.0) tier = 'S'; 
+            else if (val >= 50.0) tier = 'A';
+            else if (val >= 35.0) tier = 'B';
+            else if (val >= 20.0) tier = 'C';
         }
 
         tiers[tier].push(item);
@@ -470,3 +470,4 @@ window.onload = function() {
     updateData();
     renderStatsTable();
 };
+
