@@ -114,7 +114,7 @@
         </div>
     </div>
 
-    <div id="uma-stats" class="view-section">
+   <div id="uma-stats" class="view-section">
         <div class="card">
             <h2>Uma Statistics</h2>
             <div style="overflow-x:auto;">
@@ -123,11 +123,11 @@
                     <tr>
                         <th onclick="sortTable('umaTable', 0)">Name</th>
                         <th onclick="sortTable('umaTable', 1, true)">Picks</th>
-                        <th onclick="sortTable('umaTable', 2, true)">Wins</th>
-                        <th onclick="sortTable('umaTable', 3, true)">Win Rate %</th>
-                        <th onclick="sortTable('umaTable', 4, true)">Dominance %</th>
-                        <th onclick="sortTable('umaTable', 5, true)">Tourney Win %</th>
-                        <th onclick="sortTable('umaTable', 6, true)">Ban Rate</th>
+                        <th onclick="sortTable('umaTable', 2, true)">Pick Rate %</th> <th onclick="sortTable('umaTable', 3, true)">Wins</th>
+                        <th onclick="sortTable('umaTable', 4, true)">Win Rate %</th>
+                        <th onclick="sortTable('umaTable', 5, true)">Dominance %</th>
+                        <th onclick="sortTable('umaTable', 6, true)">Tourney Win %</th>
+                        <th onclick="sortTable('umaTable', 7, true)">Ban Rate</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -161,24 +161,24 @@
     </div>
 
     <div id="championship" class="view-section">
-    <div class="card">
-        <h2>🏆 Championship Standings</h2>
-        <div style="overflow-x:auto;">
-            <table class="stats-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Trainer</th>
-                        <th>Races</th>
-                        <th>Total Points</th>
-                        <th>Avg Pts</th>
-                    </tr>
-                </thead>
-                <tbody id="points-table-body">
+        <div class="card">
+            <h2>🏆 Championship Standings</h2>
+            <div style="overflow-x:auto;">
+                <table id="champTable" class="stats-table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('champTable', 0, true)">Rank</th>
+                            <th onclick="sortTable('champTable', 1)">Trainer</th>
+                            <th onclick="sortTable('champTable', 2, true)">Races</th>
+                            <th onclick="sortTable('champTable', 3, true)">Total Points</th>
+                            <th onclick="sortTable('champTable', 4, true)">Avg Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="points-table-body">
                     </tbody>
-            </table>
+                </table>
+            </div>
         </div>
-    </div>
     </div>
 
     <h1>Tournament Data</h1>
@@ -190,5 +190,6 @@
 
 </body>
 </html>
+
 
 
