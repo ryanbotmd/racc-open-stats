@@ -189,7 +189,7 @@ tr:hover { background-color: var(--secondary-color); }
     text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
-/* --- TIER LIST SWITCHER (New) --- */
+/* --- TIER LIST SWITCHER --- */
 .tier-switch-wrapper {
     display: flex;
     justify-content: center;
@@ -204,6 +204,8 @@ tr:hover { background-color: var(--secondary-color); }
     padding: 5px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
     border: 1px solid var(--border-color);
+    min-width: 300px; 
+    max-width: 500px;
 }
 
 .switch-option {
@@ -211,18 +213,20 @@ tr:hover { background-color: var(--secondary-color); }
     z-index: 2;
     background: none;
     border: none;
-    padding: 10px 25px;
+    padding: 10px 0;
     font-size: 0.95rem;
     font-weight: bold;
     color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s;
     opacity: 0.7;
-    min-width: 130px;
+    /* FLEX FIX */
+    flex: 1;
+    text-align: center;
 }
 
 .switch-option.active {
-    color: #fff; /* White text looks best on active glider */
+    color: #fff;
     opacity: 1;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
@@ -232,12 +236,19 @@ tr:hover { background-color: var(--secondary-color); }
     top: 5px;
     left: 5px;
     height: calc(100% - 10px);
-    width: 130px; /* Matches switch-option min-width */
+    /* FLEX FIX: 100% divided by 3 buttons */
+    width: calc((100% - 10px) / 3); 
     background-color: var(--accent-color);
     border-radius: 25px;
     z-index: 1;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+    .tier-switch { min-width: 100%; }
+    .switch-option { font-size: 0.8rem; }
 }
 
 /* --- TIER VIEW ANIMATION --- */
@@ -288,20 +299,20 @@ tr:hover { background-color: var(--secondary-color); }
     flex-grow: 1;
     padding: 10px;
     display: flex;
-    flex-wrap: wrap; /* Allows items to flow naturally */
-    gap: 8px; /* Breathing room */
+    flex-wrap: wrap;
+    gap: 8px;
     align-items: center;
 }
 
 .tier-item {
-    background: var(--bg-color); /* Contrast inside the tier row */
+    background: var(--bg-color);
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.85rem;
     border: 1px solid var(--border-color);
     color: var(--text-color);
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    white-space: nowrap; /* Prevents cramped text wrapping */
+    white-space: nowrap;
 }
 
 /* --- TIER COLORS (Flat & Clean) --- */
@@ -320,4 +331,5 @@ tr:hover { background-color: var(--secondary-color); }
         min-width: 90px;
     }
     .glider { width: 90px; }
+
 }
