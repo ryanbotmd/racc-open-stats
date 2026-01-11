@@ -220,8 +220,7 @@ tr:hover { background-color: var(--secondary-color); }
     cursor: pointer;
     transition: color 0.3s;
     opacity: 0.7;
-    /* FLEX FIX */
-    flex: 1;
+    flex: 1; 
     text-align: center;
 }
 
@@ -236,19 +235,12 @@ tr:hover { background-color: var(--secondary-color); }
     top: 5px;
     left: 5px;
     height: calc(100% - 10px);
-    /* FLEX FIX: 100% divided by 3 buttons */
     width: calc((100% - 10px) / 3); 
     background-color: var(--accent-color);
     border-radius: 25px;
     z-index: 1;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Mobile Tweaks */
-@media (max-width: 600px) {
-    .tier-switch { min-width: 100%; }
-    .switch-option { font-size: 0.8rem; }
 }
 
 /* --- TIER VIEW ANIMATION --- */
@@ -325,11 +317,12 @@ tr:hover { background-color: var(--secondary-color); }
 
 /* Mobile Tweaks */
 @media (max-width: 600px) {
-    .switch-option {
-        padding: 8px 10px;
-        font-size: 0.8rem;
-        min-width: 90px;
+    .tier-switch { 
+        min-width: 100%;
     }
-    .glider { width: 90px; }
-
+    
+    .switch-option { 
+        padding: 8px 0;
+        font-size: 0.8rem; 
+    }
 }
