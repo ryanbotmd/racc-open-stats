@@ -136,6 +136,9 @@ function calculateStats(filteredData) {
     const trainerMap = {};
     const activeTournaments = new Set();
     
+    // NEW: Calculate Total Entries (Filtered) for Pick Rate Calculation
+    const totalEntries = filteredData.length;
+
     filteredData.forEach(row => activeTournaments.add(row.RawLength));
 
     // 1. Get Points & Beat Rate Data
@@ -237,12 +240,21 @@ function calculateStats(filteredData) {
             tWinPct = tourneyCount > 0 ? (item.tournamentWins / tourneyCount * 100).toFixed(1) : "0.0";
         }
 
+        // D. Pick Rate % (NEW)
+        let pickPctVal = "0.0";
+        if (totalEntries > 0) {
+            // If Type is Uma, we look at 'picks'. If Type is Trainer, we look at 'entries'.
+            const count = type === 'uma' ? item.picks : item.entries;
+            pickPctVal = (count / totalEntries * 100).toFixed(1);
+        }
+
         const stats = {
             ...item,
             displayName: formatName(item.name),
             winRate: winRateVal,
             dom: dominanceVal,
-            tourneyWinPct: tWinPct
+            tourneyWinPct: tWinPct,
+            pickPct: pickPctVal // Add to object
         };
 
         if (type === 'uma') {
@@ -278,7 +290,7 @@ function renderTable(tableId, data, columns) {
     tbody.innerHTML = data.map(row => {
         const cells = columns.map(col => {
             if (col === 'name') return `<td>${row.displayName}</td>`;
-            if (col === 'winRate' || col === 'dom' || col === 'tourneyWinPct') return `<td>${row[col]}%</td>`;
+            if (col === 'winRate' || col === 'dom' || col === 'tourneyWinPct' || col === 'pickPct') return `<td>${row[col]}%</td>`;
             return `<td>${row[col]}</td>`;
         });
         return `<tr>${cells.join('')}</tr>`;
@@ -362,8 +374,9 @@ function updateData() {
 
     // Sort Tables
     stats.umaStats.sort((a, b) => b.dom - a.dom);
+    // MODIFIED: Added 'pickPct' to the column list below
     renderTable('umaTable', stats.umaStats, 
-        ['name', 'picks', 'wins', 'winRate', 'dom', 'tourneyStatsDisplay', 'banStatsDisplay']
+        ['name', 'picks', 'pickPct', 'wins', 'winRate', 'dom', 'tourneyStatsDisplay', 'banStatsDisplay']
     );
 
     stats.trainerStats.sort((a, b) => b.dom - a.dom);
@@ -443,22 +456,22 @@ function calculateIndividualStats() {
     return leaderboard.sort((a, b) => b.totalPoints - a.totalPoints);
 }
 
+// MODIFIED: Updated to render compatible rows for sorting
 function renderStatsTable() {
     const data = calculateIndividualStats(); 
     const tbody = document.getElementById('points-table-body');
     if (!tbody) return;
-    tbody.innerHTML = '';
-    data.forEach((player, index) => {
-        const row = `
+    tbody.innerHTML = data.map((player, index) => {
+        return `
             <tr>
                 <td>${index + 1}</td>
                 <td>${player.name}</td>
-                <td>${player.racesRun}</td> <td>${player.totalPoints}</td>
+                <td>${player.racesRun}</td>
+                <td>${player.totalPoints}</td>
                 <td>${player.avgPoints}</td>
             </tr>
         `;
-        tbody.innerHTML += row;
-    });
+    }).join('');
 }
 
 window.onload = function() {
@@ -470,4 +483,3 @@ window.onload = function() {
     updateData();
     renderStatsTable();
 };
-
